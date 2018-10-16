@@ -1,0 +1,32 @@
+[alias]
+	co = checkout
+	st = status
+	cg = config
+	stats = shortlog
+	cob = checkout -b
+	com = commit -m
+	cam = !git add -A && git commit -m
+	po = push origin
+	psup = push --set-upstream origin
+	plo = pull origin
+	plom = pull origin master
+	fom = !git fetch && git merge origin/master
+	lgg = log --graph --color
+	lo = log --oneline --decorate --color --graph
+
+[merge]
+	tool = vimdiff
+	conflictsstyle = diff3
+	conflictstyle = diff3
+[user]
+	name = John Oerter
+	email = john.oerter@fcsamerica.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gui]
+	recentrepo = C:/fcsamerica/Accounts
+[mergetool]
+	prompt = false
