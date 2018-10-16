@@ -20,13 +20,11 @@
 	conflictstyle = diff3
 [user]
 	name = John Oerter
-	email = john.oerter@fcsamerica.com
+	email = john@johnoerter.me
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[gui]
-	recentrepo = C:/fcsamerica/Accounts
 [mergetool]
 	prompt = false
