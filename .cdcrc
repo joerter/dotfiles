@@ -1,0 +1,10 @@
+CDC_DIRS=(
+$HOME/gitlab.pbdev.io/passport-devops
+$HOME/gitlab.pbdev.io/passport-enforcement
+$HOME/gitlab.pbdev.io/passport-micromobility
+$HOME/gitlab.pbdev.io/passport-parking
+$HOME/gitlab.pbdev.io/passport-permits
+$HOME/gitlab.pbdev.io/passport-shared
+$HOME/gitlab.pbdev.io/passport-uisvc
+)
+CDC_REPOS_ONLY=false

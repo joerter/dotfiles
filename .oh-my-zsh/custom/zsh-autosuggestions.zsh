@@ -1,0 +1,1 @@
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#f8f8f2,bg=#6272a4,bold,underline"

@@ -79,12 +79,14 @@ ZSH_THEME="john"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   aws
+  cdc
   common-aliases
   docker
   git
   node
   nvm
   themes
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -114,3 +116,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/slss.zsh
