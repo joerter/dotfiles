@@ -8,9 +8,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'weynhamz/vim-plugin-minibufexpl'
+Plug 'mileszs/ack.vim'
 
 " CoC
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Colorschemes
 " Plug 'joshdick/onedark.vim'
