@@ -1,2 +1,4 @@
 nvim/plugged
 .oh-my-zsh/custom/plugins
+.newsboat/cache.db
+.newsboat/cache.db.lock
