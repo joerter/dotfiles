@@ -3,16 +3,11 @@ https://redgreenrefactor.dev/clojure.xml redgreenrefactor
 https://blog.cleancoder.com/atom.xml people
 https://feed.jacobobryant.com/ people
 https://css-tricks.com/feed/ webdev
-https://www.smashingmagazine.com/feed webdev
-https://alligator.io/feed.xml webdev
-https://scotch.io/feed webdev
 https://overreacted.io/rss.xml webdev
 https://kentcdodds.com/blog/rss.xml webdev
 https://www.sarasoueidan.com/blog/index.xml webdev
-https://indepth.dev/rss webdev
 https://jrsinclair.com/index.rss webdev
 https://spreadprivacy.com/rss
-https://blog.angular.io/feed webdev
 https://reactjs.org/feed.xml webdev
 https://jacobobryant.com/feed.xml people
 http://www.aaronsw.com/2002/feeds/pgessays.rss people
@@ -33,3 +28,9 @@ https://juxt.pro/blog/rss.xml clojure
 https://dragan.rocks/feed clojure
 http://planet.clojure.in/atom.xml clojure
 https://blog.rust-lang.org/feed.xml rust
+https://cprss.s3.amazonaws.com/denoweekly.com.xml webdev
+https://www.schneier.com/feed/atom people
+https://github.com/joerter.private.atom?token=ABHVWVBYMIP4JU7RRHXKFTF6WI5ME
+https://macwright.com/rss.xml
+https://www.joshwcomeau.com/rss.xml
+https://www.bennadel.com/rss

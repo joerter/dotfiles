@@ -13,6 +13,7 @@ source ~/github/joerter/dotfiles/nvim/maps/windows.vim
 
 " Plugins
 source ~/github/joerter/dotfiles/nvim/plugins/ctrlp.vim
+source ~/github/joerter/dotfiles/nvim/plugins/coc.vim
 source ~/github/joerter/dotfiles/nvim/plugins/ack.vim
 source ~/github/joerter/dotfiles/nvim/plugins/lightline.vim
 source ~/github/joerter/dotfiles/nvim/plugins/nerdtree.vim

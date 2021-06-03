@@ -18,6 +18,3 @@ nnoremap <leader>bb :buffers<cr>:b
 
 " open a buffer
 nnoremap <leader>bo :buffer 
-
-" mini buffer
-nnoremap <leader>bt :MBEToggle<cr>

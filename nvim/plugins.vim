@@ -4,25 +4,22 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-fugitive'
-Plug 'itchyny/lightline.vim'
-Plug 'sheerun/vim-polyglot'
+" Plug 'itchyny/lightline.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'weynhamz/vim-plugin-minibufexpl'
 Plug 'mileszs/ack.vim'
+
+Plug 'mhinz/vim-startify'
 
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Colorschemes
-" Plug 'joshdick/onedark.vim'
-" Plug 'altercation/vim-colors-solarized'
+Plug 'joshdick/onedark.vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " HTML
 Plug 'mattn/emmet-vim'
-
-" CSS
-" Plug 'groenewege/vim-less'
 
 " JavaScript plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -43,6 +40,6 @@ Plug 'tpope/vim-fireplace'
 " Plug 'digitaltoad/vim-pug'
 
 " Ledger
-" Plug 'ledger/vim-ledger'
+Plug 'ledger/vim-ledger'
 
 call plug#end()

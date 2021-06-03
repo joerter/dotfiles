@@ -6,5 +6,7 @@ $HOME/gitlab.pbdev.io/passport-parking
 $HOME/gitlab.pbdev.io/passport-permits
 $HOME/gitlab.pbdev.io/passport-shared
 $HOME/gitlab.pbdev.io/passport-uisvc
+$HOME/gitlab/joerter
+$HOME/github/joerter
 )
 CDC_REPOS_ONLY=false

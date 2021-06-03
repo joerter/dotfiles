@@ -1,5 +1,5 @@
 " Reload vimrc
-nnoremap <leader>sv :source ~/.vimrc<CR>
+nnoremap <leader>rv :source ~/.config/nvim/init.vim<CR>
 
 " Getting to normal mode faster
 tnoremap jk <C-\><C-n>
