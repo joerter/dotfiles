@@ -1,5 +1,5 @@
 alias vi="nvim"
 alias vim="nvim"
 alias gs="git status"
-alias tmux="tmux -2"
+alias tmux="export TERM=tmux-256color; tmux -2"
 alias mk-sts-profile="sh /Users/johnoerter/gitlab.pbdev.io/passport-devops/build-utils/scripts/aws-mk-sts-profile.sh -t developer-dev -n node"
