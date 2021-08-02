@@ -27,6 +27,10 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'elzr/vim-json'
 Plug 'prettier/vim-prettier'
+Plug 'heavenshell/vim-jsdoc', { 
+  \ 'for': ['javascript', 'javascript.jsx','typescript'], 
+  \ 'do': 'make install'
+\}
 
 " Clojure
 Plug 'luochen1990/rainbow'

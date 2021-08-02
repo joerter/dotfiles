@@ -21,6 +21,7 @@ source ~/github/joerter/dotfiles/nvim/plugins/prettier.vim
 source ~/github/joerter/dotfiles/nvim/plugins/emmet.vim
 source ~/github/joerter/dotfiles/nvim/plugins/rainbow-parentheses.vim
 source ~/github/joerter/dotfiles/nvim/plugins/sexp.vim
+source ~/github/joerter/dotfiles/nvim/plugins/jsdoc.vim
 
 source ~/github/joerter/dotfiles/nvim/languages/javascript.vim
 source ~/github/joerter/dotfiles/nvim/languages/clojure.vim
