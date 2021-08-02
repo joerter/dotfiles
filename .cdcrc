@@ -6,6 +6,8 @@ $HOME/gitlab.pbdev.io/passport-parking
 $HOME/gitlab.pbdev.io/passport-permits
 $HOME/gitlab.pbdev.io/passport-shared
 $HOME/gitlab.pbdev.io/passport-uisvc
+$HOME/gitlab.pbdev.io/passport-analytics
+$HOME/gitlab.pbdev.io/renovate
 $HOME/gitlab/joerter
 $HOME/github/joerter
 )
