@@ -31,6 +31,7 @@ Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'], 
   \ 'do': 'make install'
 \}
+Plug 'jxnblk/vim-mdx-js'
 
 " Clojure
 Plug 'luochen1990/rainbow'
