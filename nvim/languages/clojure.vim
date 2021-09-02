@@ -1,3 +1,5 @@
+nnoremap <leader>cE :Eval<cr>
+
 " Eval and use clojure.repl namespace for docs
 nnoremap <leader>cEd :Eval (use 'clojure.repl)<cr>
 
