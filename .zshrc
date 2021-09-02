@@ -127,3 +127,9 @@ export TERM=tmux-256color
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/slss.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/johnoerter/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johnoerter/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/johnoerter/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johnoerter/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
