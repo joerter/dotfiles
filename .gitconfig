@@ -17,3 +17,5 @@
 [user]
 	name = John Oerter
 	email = john.oerter@passportinc.com
+[pull]
+	rebase = false

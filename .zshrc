@@ -2,14 +2,14 @@ export ZSH_DISABLE_COMPFIX="true"
 
 export NVM_DIR=~/.nvm
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/bin:$PATH"
 
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/johnoerter/.oh-my-zsh"
-export ZSH_CUSTOM="/Users/johnoerter/github/joerter/dotfiles/.oh-my-zsh/custom"
+export ZSH="/Users/john.oerterpassportinc.com/.oh-my-zsh"
+export ZSH_CUSTOM="/Users/john.oerterpassportinc.com/github/joerter/dotfiles/.oh-my-zsh/custom"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export TERM=tmux-256color
+# export TERM=tmux-256color
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -120,16 +120,10 @@ export TERM=tmux-256color
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/serverless.zsh
+[[ -f /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/sls.zsh
+[[ -f /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/sls.zsh
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/johnoerter/gitlab.pbdev.io/passport-shared/shared-activity-portal-uisvc/node_modules/tabtab/.completions/slss.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/johnoerter/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johnoerter/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/johnoerter/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johnoerter/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+[[ -f /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/slss.zsh
