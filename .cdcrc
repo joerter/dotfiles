@@ -1,4 +1,5 @@
 CDC_DIRS=(
+$HOME/gitlab.pdev.io/passport-dataops
 $HOME/gitlab.pdev.io/passport-devops
 $HOME/gitlab.pdev.io/passport-enforcement
 $HOME/gitlab.pdev.io/passport-micromobility

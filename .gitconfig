@@ -19,3 +19,5 @@
 	email = john.oerter@passportinc.com
 [pull]
 	rebase = false
+[core]
+  editor = nvim
