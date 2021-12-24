@@ -21,3 +21,11 @@
 	rebase = false
 [core]
   editor = nvim
+[gitlab]
+	user = joerter
+[gitlab "pdev.io"]
+	user = joerter
+[gitlab "gitlab.pdev.io/api/v4"]
+	user = joerter
+[github]
+	user = joerter
