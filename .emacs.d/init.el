@@ -326,10 +326,18 @@
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
 (use-package typescript-mode
-  :mode "\\.ts\\'"
+  :ensure t
+  :mode "\\.tsx?$"
   :hook (typescript-mode . lsp-deferred)
   :config
   (setq typescript-indent-level 2))
+
+(use-package tree-sitter :ensure t)
+(use-package tree-sitter-langs :ensure t)
+(use-package prettier-js :ensure t :hook (typescript-mode))
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
+(add-hook 'typescript-mode-hook #'tree-sitter-hl-mode)
 
 (use-package js2-mode
     :mode "\\.js\\'"
@@ -368,7 +376,7 @@
           '(("django" . "focus/.*\\.html\\'")
             ("ctemplate" . "realtimecrm/.*\\.html\\'"))))
 
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 
 (use-package dumb-jump
     :bind (("C-M-g" . dumb-jump-go)
@@ -377,22 +385,6 @@
 
 (use-package zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(global-tree-sitter-mode t)
- '(package-selected-packages
-   '(zencoding-mode web-mode add-node-modules-path js-doc prettier-js rjsx-mode js2-refactor js2-mode flycheck dumb-jump exec-path-from-shell smartparens tree-sitter eshell-git-prompt lsp-treemacs lsp-ivy lsp-ui typescript-mode lsp-mode which-key visual-fill-column use-package undo-tree rainbow-delimiters org-bullets ivy-rich hydra helpful general forge evil-collection doom-themes doom-modeline counsel-projectile command-log-mode)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
 
 (defun jo/configure-eshell ()
   ;; Save command history when commands are entered
@@ -478,3 +470,17 @@
 					root))))
     (when (and eslint (file-executable-p eslint))
     (setq-local flycheck-javascript-eslint-executable eslint))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(global-tree-sitter-mode t)
+ '(package-selected-packages
+   '(tree-sitter-langs zencoding-mode web-mode add-node-modules-path js-doc prettier-js rjsx-mode js2-refactor js2-mode flycheck dumb-jump exec-path-from-shell smartparens tree-sitter eshell-git-prompt lsp-treemacs lsp-ivy lsp-ui typescript-mode lsp-mode which-key visual-fill-column use-package undo-tree rainbow-delimiters org-bullets ivy-rich hydra helpful general forge evil-collection doom-themes doom-modeline counsel-projectile command-log-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
