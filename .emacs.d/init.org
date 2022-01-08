@@ -1,3 +1,10 @@
+#+TITLE: My Emacs Config
+#+AUTHOR: John Oerter
+#+EMAIL: john@johnoerter.me
+#+PROPERTY: header-args:emacs-lisp :tangle ./init.el :mkdirp yes
+
+* Base Configurations
+#+begin_src emacs-lisp
 (setq inhibit-startup-message t)
 
 (scroll-bar-mode -1)        ; Disable visible scrollbar
@@ -20,23 +27,33 @@
 ;; Set up the visible bell
 (setq visible-bell t)
 
-(column-number-mode)
-;; Enable line numbers for some modes
-(dolist (mode '(text-mode-hook
-                term-mode-hook
-                eshell-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 1))))
+#+end_src
 
-(setq-default display-line-numbers 'visual
-              display-line-numbers-widen t
-              ;; this is the default
-              display-line-numbers-current-absolute t)
+* Line Numbers
+#+begin_src emacs-lisp
+  (column-number-mode)
+  ;; Enable line numbers for some modes
+  (dolist (mode '(text-mode-hook
+                  term-mode-hook
+                  eshell-mode-hook))
+    (add-hook mode (lambda () (display-line-numbers-mode 1))))
 
+  (setq-default display-line-numbers 'visual
+                display-line-numbers-widen t
+                ;; this is the default
+                display-line-numbers-current-absolute t)
+#+end_src
+
+* Font Configuration
+#+begin_src emacs-lisp
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 150)
 (set-face-attribute 'fixed-pitch nil :font "JetBrainsMono Nerd Font" :height 150)
 ;; Set the variable pitch face
 (set-face-attribute 'variable-pitch nil :font "Cantarell" :height 160 :weight 'regular)
+#+end_src
 
+* Package Management
+#+begin_src emacs-lisp
 ;; Initialize package sources
 (require 'package)
 
@@ -55,73 +72,81 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; Make ESC quit prompts
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+#+end_src
 
-(use-package which-key
-  :init (which-key-mode)
-  :diminish which-key-mode
-  :config
-  (setq which-key-idle-delay 0.3))
+* Keybindings
+#+begin_src emacs-lisp
+  ;; Make ESC quit prompts
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-(use-package general
-  :config
-  (general-evil-setup t)
+  (use-package which-key
+    :init (which-key-mode)
+    :diminish which-key-mode
+    :config
+    (setq which-key-idle-delay 0.3))
 
-  (general-create-definer jo/leader-keys
-    :keymaps '(normal insert visual emacs)
-    :prefix "SPC"
-    :global-prefix "C-SPC")
-)
+  (use-package general
+    :config
+    (general-evil-setup t)
 
-(general-imap "j"
-    (general-key-dispatch 'self-insert-command
-    :timeout 0.25
-    "k" 'evil-normal-state))
-
-
-(jo/leader-keys
-  :keymaps 'normal
-  ;; windows
-  "w%" '(evil-window-vsplit :which-key "split window vertically")
-  "w\"" '(evil-window-split :which-key "split window horizontally")
-  "wd" '(evil-window-delete :which-key "close window")
-  "wj" '(evil-window-down :which-key "window down")
-  "wh" '(evil-window-left :which-key "window left")
-  "wk" '(evil-window-up :which-key "window up")
-  "wl" '(evil-window-right :which-key "window right")
-  ;; files
-  "fs" '(evil-write :which-key "write file")
-  "ff" '(counsel-find-file :which-key "find file")
-  ;; buffers
-  "be" '(eval-buffer :which-key "eval-buffer")
-  "bb" '(counsel-switch-buffer :which-key "switch buffer")
-  "bcc" '(comment-region :which-key "comment region")
-  "bcu" '(uncomment-region :which-key "uncomment region")
-  "bd" '(kill-buffer :which-key "kill-buffer")
-  "bota" '(origami-toggle-all-nodes :which-key "origami toggle all")
-  "botn" '(origami-toggle-node :which-key "origami toggle node")
-  "botr" '(origami-recursively-toggle-node :which-key "origami toggle node recursively")
-  "bp" '(prettier-js :which-key "run prettier on buffer")
-  ;; projectile
-  "ps" '(projectile-switch-project :which-key "switch project")
-  "pf" '(projectile-find-file :which-key "find file")
-  "pr" '(counsel-projectile-rg :which-key "rip grep")
-  "pe" '(projectile-run-eshell :which-key "run eshell")
-  ;; magit
-  "gs" '(magit :which-key "git status")
-  ;; org mode
-  "ot" '(org-babel-tangle :which-key "org babel tangle")
-  ;; lsp
-  "lca" '(lsp-execute-code-action :which-key "code action")
-  "le" '(lsp-treemacs-errors-list :which-key "errors")
-  "lfd" '(lsp-find-definition :which-key "find definition")
-  "lfrr" '(lsp-find-references :which-key "find references")
-  "lfrn" '(lsp-ui-find-next-reference :which-key "next reference")
-  "lfrp" '(lsp-ui-find-prev-reference :which-key "prev reference")
-  "lrr" '(lsp-rename :which-key "rename")
+    (general-create-definer jo/leader-keys
+      :keymaps '(normal insert visual emacs)
+      :prefix "SPC"
+      :global-prefix "C-SPC")
   )
 
+  (general-imap "j"
+      (general-key-dispatch 'self-insert-command
+      :timeout 0.25
+      "k" 'evil-normal-state))
+
+
+  (jo/leader-keys
+    :keymaps 'normal
+    ;; windows
+    "w%" '(evil-window-vsplit :which-key "split window vertically")
+    "w\"" '(evil-window-split :which-key "split window horizontally")
+    "wd" '(evil-window-delete :which-key "close window")
+    "wj" '(evil-window-down :which-key "window down")
+    "wh" '(evil-window-left :which-key "window left")
+    "wk" '(evil-window-up :which-key "window up")
+    "wl" '(evil-window-right :which-key "window right")
+    ;; files
+    "fs" '(evil-write :which-key "write file")
+    "ff" '(counsel-find-file :which-key "find file")
+    ;; buffers
+    "be" '(eval-buffer :which-key "eval-buffer")
+    "bb" '(counsel-switch-buffer :which-key "switch buffer")
+    "bcc" '(comment-region :which-key "comment region")
+    "bcu" '(uncomment-region :which-key "uncomment region")
+    "bd" '(kill-buffer :which-key "kill-buffer")
+    "bota" '(origami-toggle-all-nodes :which-key "origami toggle all")
+    "botn" '(origami-toggle-node :which-key "origami toggle node")
+    "botr" '(origami-recursively-toggle-node :which-key "origami toggle node recursively")
+    "bp" '(prettier-js :which-key "run prettier on buffer")
+    ;; projectile
+    "ps" '(projectile-switch-project :which-key "switch project")
+    "pf" '(projectile-find-file :which-key "find file")
+    "pr" '(counsel-projectile-rg :which-key "rip grep")
+    "pe" '(projectile-run-eshell :which-key "run eshell")
+    ;; magit
+    "gs" '(magit :which-key "git status")
+    ;; org mode
+    "ot" '(org-babel-tangle :which-key "org babel tangle")
+    ;; lsp
+    "lca" '(lsp-execute-code-action :which-key "code action")
+    "le" '(lsp-treemacs-errors-list :which-key "errors")
+    "lfd" '(lsp-find-definition :which-key "find definition")
+    "lfrr" '(lsp-find-references :which-key "find references")
+    "lfrn" '(lsp-ui-find-next-reference :which-key "next reference")
+    "lfrp" '(lsp-ui-find-prev-reference :which-key "prev reference")
+    "lrr" '(lsp-rename :which-key "rename")
+    )
+
+#+end_src
+
+* Editor Settings
+#+begin_src emacs-lisp
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
@@ -131,6 +156,10 @@
 
 (add-hook 'prog-mode-hook 'electric-pair-mode)
 
+#+end_src
+
+* Ivy and Counsel
+#+begin_src emacs-lisp
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper)
@@ -166,6 +195,10 @@
   :config
   (setq ivy-initial-inputs-alist nil))
 
+#+end_src
+
+* UI Theming
+#+begin_src emacs-lisp
 (use-package all-the-icons
   :if (display-graphic-p))
 
@@ -192,6 +225,10 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
+#+end_src
+
+* Evil Mode
+#+begin_src emacs-lisp
 (use-package undo-tree
   :init
   (global-undo-tree-mode 1))
@@ -219,7 +256,11 @@
   :config
   (evil-collection-init))
 
-(use-package projectile
+#+end_src
+
+* Projectile
+#+begin_src emacs-lisp
+    (use-package projectile
       :diminish projectile-mode
       :config (projectile-mode)
       :custom ((projectile-completion-system 'ivy))
@@ -237,21 +278,29 @@
 (setq projectile-sort-order 'recently-active)
 (setq projectile-enable-caching t)
 
-(use-package helpful
-    :custom
-    (counsel-describe-function-function #'helpful-callable)
-    (counsel-describe-variable-function #'helpful-variable)
-    :bind
-    ([remap describe-function] . helpful-function)
-    ([remap describe-symbol] . helpful-symbol)
-    ([remap describe-variable] . helpful-variable)
-    ([remap describe-command] . helpful-command)
-    ([remap describe-key] . helpful-key))
+#+end_src
 
-(use-package yaml-mode)
-  (use-package origami) ;; code folding
+* Miscellaneous Packages
+#+begin_src emacs-lisp
+    (use-package helpful
+      :custom
+      (counsel-describe-function-function #'helpful-callable)
+      (counsel-describe-variable-function #'helpful-variable)
+      :bind
+      ([remap describe-function] . helpful-function)
+      ([remap describe-symbol] . helpful-symbol)
+      ([remap describe-variable] . helpful-variable)
+      ([remap describe-command] . helpful-command)
+      ([remap describe-key] . helpful-key))
 
-(use-package magit)
+  (use-package yaml-mode)
+    (use-package origami) ;; code folding
+
+#+end_src
+
+* Magit
+#+begin_src emacs-lisp
+  (use-package magit)
 
   (use-package forge
     :after magit
@@ -259,6 +308,10 @@
     (setq auth-sources '("~/.authinfo")))
 (add-to-list 'forge-alist '("gitlab.pdev.io" "gitlab.pdev.io/api/v4" "gitlab.pdev.io" forge-gitlab-repository))
 
+#+end_src
+
+* LSP Mode
+#+begin_src emacs-lisp
 (defun jo/lsp-mode-setup ()
   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file ))
   (setq lsp-modeline-code-actions-segments '(count icon))
@@ -285,11 +338,18 @@
   (setq company-minimum-prefix-length 1
 	company-idle-delay 0.0))
 
+#+end_src
+** LSP Performance
+*** Some tweaks that should increase performance from https://emacs-lsp.github.io/lsp-mode/page/performance/
+#+begin_src emacs-lisp
 (setq gc-cons-threshold 100000000)
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 (setq lsp-use-plists t)
 (setq lsp-idle-delay 0.500) ;; fine tune this value for how often lsp-mode refreshes
+#+end_src
 
+* TS, JS, HTML, CSS
+#+begin_src emacs-lisp
 (use-package typescript-mode
   :ensure t
   :mode ("\\.tsx?$" "\\.jsx?$")
@@ -328,6 +388,11 @@
     (when (and eslint (file-executable-p eslint))
     (setq-local flycheck-javascript-eslint-executable eslint))))
 
+#+end_src
+
+* Eshell
+#+begin_src emacs-lisp
+
 (defun jo/configure-eshell ()
   ;; Save command history when commands are entered
   (add-hook 'eshell-pre-command-hook 'eshell-save-some-history)
@@ -361,6 +426,10 @@
   :config
   (exec-path-from-shell-initialize))
 
+#+end_src
+
+* Flycheck
+#+begin_src emacs-lisp
 (use-package flycheck
     :config
     (add-hook 'after-init-hook 'global-flycheck-mode)
@@ -402,8 +471,13 @@
       :fringe-bitmap 'flycheck-fringe-bitmap-ball
       :fringe-face 'flycheck-fringe-info))
 
+#+end_src
 
+* Org Mode
+#+begin_src emacs-lisp
 
+#+end_src
+#+begin_src emacs-lisp
 (defun jo/org-mode-setup ()
   (org-indent-mode)
   (variable-pitch-mode 1))
@@ -453,3 +527,5 @@
 
 (use-package visual-fill-column
   :hook (org-mode . jo/org-mode-visual-fill))
+
+#+end_src

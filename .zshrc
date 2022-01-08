@@ -127,3 +127,6 @@ source $ZSH/oh-my-zsh.sh
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/slss.zsh
+
+# Created by `pipx` on 2022-01-04 13:54:26
+export PATH="$PATH:/Users/john.oerterpassportinc.com/.local/bin"
