@@ -14,6 +14,7 @@
 	fod = !git fetch && git merge origin/develop
 	lgg = log --graph --color
 	lo = log --oneline --decorate --color --graph
+	mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
 [user]
 	name = John Oerter
 	email = john.oerter@passportinc.com

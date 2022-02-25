@@ -52,7 +52,7 @@ filetype plugin indent on
 set showmatch
 
 " Folding
-set foldmethod=syntax
+set foldmethod=indent
 set foldcolumn=0
 let javaScript_fold=1
 set foldlevelstart=99
@@ -74,3 +74,5 @@ set path+=**
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+
+set autoread

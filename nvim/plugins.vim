@@ -26,10 +26,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'glepnir/dashboard-nvim'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Colorschemes
 Plug 'joshdick/onedark.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " HTML
