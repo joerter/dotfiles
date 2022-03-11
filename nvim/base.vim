@@ -55,7 +55,7 @@ set showmatch
 set foldmethod=indent
 set foldcolumn=0
 let javaScript_fold=1
-set foldlevelstart=99
+set foldlevelstart=0
 
 " Searching
 set wrapscan
