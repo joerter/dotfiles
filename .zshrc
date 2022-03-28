@@ -2,14 +2,14 @@ export ZSH_DISABLE_COMPFIX="true"
 
 export NVM_DIR=~/.nvm
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
 
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/john.oerterpassportinc.com/.oh-my-zsh"
-export ZSH_CUSTOM="/Users/john.oerterpassportinc.com/github/joerter/dotfiles/.oh-my-zsh/custom"
+export ZSH="/Users/joerter/.oh-my-zsh"
+export ZSH_CUSTOM="/Users/joerter/github/joerter/dotfiles/.oh-my-zsh/custom"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -117,16 +117,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-shared/shared-looker/node_modules/tabtab/.completions/slss.zsh
-
-# Created by `pipx` on 2022-01-04 13:54:26
-export PATH="$PATH:/Users/john.oerterpassportinc.com/.local/bin"

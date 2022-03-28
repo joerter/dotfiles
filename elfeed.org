@@ -1,0 +1,26 @@
+* root :elfeed:
+** Hacker News :hackernews:
+*** [[https://hnrss.org/frontpage][Front Page]]
+*** [[https://hnrss.org/bestcomments][Best Comments]]
+*** [[https://hnrss.org/newest?q=digital%20therapeutics][Digital Therapeutics Keyword]]
+*** [[https://hnrss.org/newest?q=parking][Parking Keyword]]
+** Newsletters :newsletters:
+*** [[https://cprss.s3.amazonaws.com/react.statuscode.com.xml][React Status]] :react:
+*** [[https://cprss.s3.amazonaws.com/nodeweekly.com.xml][Node Weekly]] :node:
+*** [[https://cprss.s3.amazonaws.com/javascriptweekly.com.xml][JavaScript Weekly]] :javascript:
+*** [[https://cprss.s3.amazonaws.com/frontendfoc.us.xml][Frontend Focus]] :frontend:
+*** [[https://cprss.s3.amazonaws.com/serverless.email.xml][Serverless Status]] :serverless:
+*** [[https://cprss.s3.amazonaws.com/denoweekly.com.xml][Deno]] :deno:
+*** [[https://cprss.s3.amazonaws.com/jamstack.email.xml][Jamstacked]] :jamstack:
+*** [[https://css-tricks.com/rss-for-newsletters/][CSS Tricks]] :csstricks:
+*** [[https://rss.app/feeds/3Sw9QIHRCVuKRobE.xml][TLDR Tech]] :tldrtech:
+** Blogs
+*** [[https://redgreenrefactor.dev/rss.xml][Red Green Refactor]] :redgreenrefactor:
+*** [[https://kentcdodds.com/blog/rss.xml][Kent C Dodds]] :kentcdodds:
+*** [[https://www.joshwcomeau.com/rss.xml][Josh W Comeau]] :joshwcomeau:
+*** [[https://blog.cleancoder.com/atom.xml][Uncle Bob]] :cleancode:
+*** [[https://reactnative.dev/blog/rss.xml][React Native Blog]] :reactnative:
+** Crypto
+*** [[https://cointelegraph.com/rss][Coin Telegraph]] :cointelegraph:
+** Health
+*** [[https://startingstrength.com/rss.rss][Starting Strength]] :startingstrength:
