@@ -21,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 14 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 14))
+(setq doom-font (font-spec :family "Dank Mono" :size 16 :weight 'regular)
+      doom-variable-pitch-font (font-spec :family "Lato" :size 14))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -76,3 +76,27 @@
 ;; they are implemented.
 
  (setq projectile-project-search-path '(("~/gitlab.pdev.io" . 2) ("~/github" . 2) "~/org" ))
+
+(add-hook! 'org-mode-hook
+           #'+org-pretty-mode #'mixed-pitch-mode)
+
+(after! org
+  (custom-set-faces!
+    '(org-document-title :height 1.3)
+    '(org-level-1 :inherit outline-1 :weight extra-bold :height 1.4)
+    '(org-level-2 :inherit outline-2 :weight bold :height 1.15)
+    '(org-level-3 :inherit outline-3 :weight bold :height 1.12)
+    '(org-level-4 :inherit outline-4 :weight bold :height 1.09)
+    '(org-level-5 :inherit outline-5 :weight semi-bold :height 1.06)
+    '(org-level-6 :inherit outline-6 :weight semi-bold :height 1.03)
+    '(org-level-7 :inherit outline-7 :weight semi-bold)
+    '(org-level-8 :inherit outline-8 :weight semi-bold)
+    ;; Ensure that anything that should be fixed-pitch in org buffers appears that
+    ;; way
+    '(org-block nil :foreground nil :inherit 'fixed-pitch)
+    '(org-code nil   :inherit '(shadow fixed-pitch))
+    '(org-table nil   :inherit '(shadow fixed-pitch))
+    '(org-verbatim nil :inherit '(shadow fixed-pitch))
+    '(org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+    '(org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+    '(org-checkbox nil :inherit 'fixed-pitch)))
