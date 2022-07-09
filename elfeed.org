@@ -1,9 +1,8 @@
 * root :elfeed:
 ** Hacker News :hackernews:
-*** [[https://hnrss.org/frontpage][Front Page]]
-*** [[https://hnrss.org/bestcomments][Best Comments]]
-*** [[https://hnrss.org/newest?q=digital%20therapeutics][Digital Therapeutics Keyword]]
-*** [[https://hnrss.org/newest?q=parking][Parking Keyword]]
+*** [[https://hnrss.org/frontpage][Front Page]] :frontpage:
+*** [[https://hnrss.org/bestcomments][Best Comments]] :comments:
+*** [[https://hnrss.org/newest?q=parking][Parking Keyword]] :parking:
 ** Newsletters :newsletters:
 *** [[https://cprss.s3.amazonaws.com/react.statuscode.com.xml][React Status]] :react:
 *** [[https://cprss.s3.amazonaws.com/nodeweekly.com.xml][Node Weekly]] :node:
@@ -14,13 +13,10 @@
 *** [[https://cprss.s3.amazonaws.com/jamstack.email.xml][Jamstacked]] :jamstack:
 *** [[https://css-tricks.com/rss-for-newsletters/][CSS Tricks]] :csstricks:
 *** [[https://rss.app/feeds/3Sw9QIHRCVuKRobE.xml][TLDR Tech]] :tldrtech:
-** Blogs
+** Blogs :blogs:
 *** [[https://redgreenrefactor.dev/rss.xml][Red Green Refactor]] :redgreenrefactor:
 *** [[https://kentcdodds.com/blog/rss.xml][Kent C Dodds]] :kentcdodds:
 *** [[https://www.joshwcomeau.com/rss.xml][Josh W Comeau]] :joshwcomeau:
 *** [[https://blog.cleancoder.com/atom.xml][Uncle Bob]] :cleancode:
 *** [[https://reactnative.dev/blog/rss.xml][React Native Blog]] :reactnative:
-** Crypto
-*** [[https://cointelegraph.com/rss][Coin Telegraph]] :cointelegraph:
-** Health
-*** [[https://startingstrength.com/rss.rss][Starting Strength]] :startingstrength:
+*** [[https://www.danwaters.org/feed.xml][Dan Waters]] :danwaters:
