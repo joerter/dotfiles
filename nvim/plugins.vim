@@ -25,8 +25,6 @@ Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-fugitive'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
-Plug 'glepnir/dashboard-nvim'
-Plug 'ludovicchabant/vim-gutentags'
 
 " Colorschemes
 Plug 'joshdick/onedark.vim'
@@ -45,10 +43,6 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html', 'tsx', 'jsx'] }
 
-Plug 'heavenshell/vim-jsdoc', { 
-  \ 'for': ['javascript', 'javascript.jsx','typescript'], 
-  \ 'do': 'make install'
-\}
 Plug 'jxnblk/vim-mdx-js'
 
 " Clojure

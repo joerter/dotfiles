@@ -25,6 +25,7 @@ source ~/github/joerter/dotfiles/nvim/plugins/lspsaga.vim
 source ~/github/joerter/dotfiles/nvim/plugins/dashboard-nvim.vim
 source ~/github/joerter/dotfiles/nvim/plugins/vim-vsnip.vim
 source ~/github/joerter/dotfiles/nvim/plugins/nvim-cmp.vim
+source ~/github/joerter/dotfiles/nvim/plugins/fugitive.vim
 
 source ~/github/joerter/dotfiles/nvim/languages/javascript.vim
 source ~/github/joerter/dotfiles/nvim/languages/clojure.vim

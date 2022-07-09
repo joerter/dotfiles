@@ -1,4 +1,6 @@
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>pf <cmd>Telescope find_files<cr>
+
 nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 nnoremap <leader>fb <cmd>Telescope file_browser<cr>
 

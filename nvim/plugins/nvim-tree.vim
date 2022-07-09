@@ -1,6 +1,3 @@
-let g:nvim_tree_git_hl = 1
-let g:nvim_tree_highlight_opened_files = 1
-
 nnoremap <leader>ft :NvimTreeToggle<CR>
 nnoremap <leader>fr :NvimTreeRefresh<CR>
 nnoremap <leader>fn :NvimTreeFindFile<CR>
@@ -13,11 +10,14 @@ lua << EOF
         update_cwd  = false,
         ignore_list = {'.git'}
       },
+      renderer = {
+        highlight_opened_files = 'all',
+        highlight_git = true,
+      },
       view = {
         width = 50,
         height = 30,
         side = 'left',
-        auto_resize = false,
         mappings = {
           custom_only = false,
           list = {}
