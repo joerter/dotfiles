@@ -2,7 +2,7 @@ export ZSH_DISABLE_COMPFIX="true"
 
 export NVM_DIR=~/.nvm
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt/python@3.9/libexec/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
 
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
