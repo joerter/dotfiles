@@ -1,5 +1,8 @@
 alias vi="nvim"
 alias vim="nvim"
 alias gs="git status"
-alias mk-sts-profile="sh /Users/john.oerterpassportinc.com/gitlab.pdev.io/passport-devops/build-utils/scripts/aws-mk-sts-profile.sh -t developer-dev -n node"
-alias python="python3"
+alias start-entouch-core="cd ~/github/dinacare/entouch-core && nvm use && cd packages/entouch-rest && yarn start:local"
+alias start-enTouch-web="cd ~/github/dinacare/enTouch-web && nvm use && npm run start:local"
+alias start-hub="cd ~/github/dinacare/hub && nvm use && npm run start-web-local"
+
+alias uuidgen='docker run --rm andyneff/uuidgen uuidgen -r'

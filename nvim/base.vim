@@ -14,8 +14,8 @@ set noswapfile
 set laststatus=2
 
 " display column and line indicator
-set cursorcolumn
-set cursorline
+" set cursorcolumn
+" set cursorline
 
 " Line Numbers
 set rnu
@@ -55,7 +55,7 @@ set showmatch
 set foldmethod=indent
 set foldcolumn=0
 let javaScript_fold=1
-set foldlevelstart=0
+set foldlevelstart=99
 
 " Searching
 set wrapscan

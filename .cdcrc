@@ -1,15 +1,5 @@
 CDC_DIRS=(
-$HOME/gitlab.pdev.io/passport-dataops
-$HOME/gitlab.pdev.io/passport-devops
-$HOME/gitlab.pdev.io/passport-enforcement
-$HOME/gitlab.pdev.io/passport-micromobility
-$HOME/gitlab.pdev.io/passport-parking
-$HOME/gitlab.pdev.io/passport-permits
-$HOME/gitlab.pdev.io/passport-shared
-$HOME/gitlab.pdev.io/passport-uisvc
-$HOME/gitlab.pdev.io/passport-analytics
-$HOME/gitlab.pdev.io/passport-monolith
-$HOME/gitlab/joerter
 $HOME/github/joerter
+$HOME/github/dinacare
 )
 CDC_REPOS_ONLY=false
