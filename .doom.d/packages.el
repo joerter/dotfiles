@@ -51,5 +51,3 @@
 
 (package! prettier-js)
 (package! treemacs-all-the-icons)
-(package! dockerfile-mode)
-(package! prisma-mode :recipe (:host github :repo "pimeys/emacs-prisma-mode" :branch "main"))

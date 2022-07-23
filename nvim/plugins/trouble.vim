@@ -1,3 +1,5 @@
+nnoremap <leader>tt :TroubleToggle<cr>
+
 lua << EOF
   require("trouble").setup {
     -- your configuration comes here

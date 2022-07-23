@@ -1,15 +1,7 @@
-export ZSH_DISABLE_COMPFIX="true"
-
-export NVM_DIR=~/.nvm
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="/opt/homebrew/bin:/opt/homebrew/opt/python@3.9/libexec/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
-
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/joerter/.oh-my-zsh"
 export ZSH_CUSTOM="/Users/joerter/github/joerter/dotfiles/.oh-my-zsh/custom"
+export ZSH_DISABLE_COMPFIX="true"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -91,29 +83,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+export NVM_DIR=~/.nvm
 
-# export TERM=tmux-256color
-# export MANPATH="/usr/local/man:$MANPATH"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt/python@3.9/libexec/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"

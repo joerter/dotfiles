@@ -7,26 +7,29 @@
 	cod = checkout develop
 	com = commit -m
 	cam = !git add -A && git commit -m
+	cz = !git-cz
 	po = push origin
 	psup = push --set-upstream origin
 	plo = pull origin
+	spl = !git stash && git pull origin && git stash pop
 	plom = !git pull origin $(git_main_branch)
-	fod = !git fetch && git merge origin/develop
+	fom = !git fetch && git merge origin/main
 	lgg = log --graph --color
 	lo = log --oneline --decorate --color --graph
 	mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
 [user]
 	name = John Oerter
-	email = john.oerter@passportinc.com
+	email = john@johnoerter.me
 [pull]
 	rebase = false
 [core]
   editor = nvim
-[gitlab]
-	user = joerter
-[gitlab "pdev.io"]
-	user = joerter
-[gitlab "gitlab.pdev.io/api/v4"]
-	user = joerter
 [github]
 	user = joerter
+[push]
+	default = current
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

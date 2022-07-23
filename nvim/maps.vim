@@ -17,6 +17,3 @@ nnoremap <leader>cn :cnext<cr>
 nnoremap <leader>cp :cprevious<cr>
 
 nnoremap <leader>sc :setlocal spell spelllang=en_us<cr>
-
-" toggle paste mode
-nmap <leader>p :set paste!<CR>
