@@ -20,3 +20,4 @@
 *** [[https://blog.cleancoder.com/atom.xml][Uncle Bob]] :cleancode:
 *** [[https://reactnative.dev/blog/rss.xml][React Native Blog]] :reactnative:
 *** [[https://www.danwaters.org/feed.xml][Dan Waters]] :danwaters:
+*** [[https://elijahmanor.com/rss.xml][Elijah Manor]] :elijahmanor:
