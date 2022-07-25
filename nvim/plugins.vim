@@ -4,14 +4,17 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'tribela/vim-transparent'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'folke/trouble.nvim'
+
+Plug 'karb94/neoscroll.nvim'
 
 " Telescope
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -35,9 +38,13 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mattn/emmet-vim'
 
 " JavaScript plugins
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+" Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+" Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+
 Plug 'elzr/vim-json'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
@@ -45,6 +52,8 @@ Plug 'prettier/vim-prettier', {
   \ }
 
 Plug 'jxnblk/vim-mdx-js'
+
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Clojure
 Plug 'luochen1990/rainbow'

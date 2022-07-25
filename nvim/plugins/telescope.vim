@@ -21,14 +21,19 @@ nnoremap <leader>tr <cmd>Telescope registers<cr>
 nnoremap <leader>tt <cmd>Telescope tags<cr>
 
 lua <<EOF
+local actions = require("telescope.actions")
+local trouble = require("trouble.providers.telescope")
+
 require("telescope").setup({
   defaults = {
     mappings = {
       i = {
-        ["<C-j>"] = require('telescope.actions').move_selection_next,
-        ["<C-k>"] = require('telescope.actions').move_selection_previous,
-        ["<esc>"] = require('telescope.actions').close,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<esc>"] = actions.close,
+        ["<c-t>"] = trouble.open_with_trouble
       },
+      n = { ["<c-t>"] = trouble.open_with_trouble }
     }
   }
 })
