@@ -14,8 +14,8 @@ set noswapfile
 set laststatus=2
 
 " display column and line indicator
-" set cursorcolumn
-" set cursorline
+set cursorcolumn
+set cursorline
 
 " Line Numbers
 set rnu
