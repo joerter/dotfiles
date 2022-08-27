@@ -6,7 +6,7 @@ vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 vnoremap <silent><leader>cf :Lspsaga lsp_finder<CR>
 
 nnoremap <silent><leader>ch :Lspsaga hover_doc<CR>
-nnoremap <silent><leader>ch :Lspsaga preview_definition<CR>
+nnoremap <silent><leader>cl :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent><leader>cr :Lspsaga rename<CR>
 
 " scroll down hover doc or scroll in definition preview

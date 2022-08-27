@@ -1,6 +1,7 @@
 CDC_DIRS=(
-$HOME/gitlab/joerter
 $HOME/github/joerter
-$HOME/github/WaveCX
+$HOME/github/dinacare
+$HOME/github/mui
+$HOME/github/pubnub
 )
 CDC_REPOS_ONLY=false

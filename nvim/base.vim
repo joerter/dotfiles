@@ -29,8 +29,8 @@ set number
 set relativenumber
 set numberwidth=1
 
-" Set 7 lines to the cursor when moving vertically with j/k
-set so=7
+" Set 10 lines to the cursor when moving vertically with j/k
+set so=10
 
 " Wrapping - No wrap, scroll one char at a time
 set nowrap

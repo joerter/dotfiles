@@ -1,2 +1,5 @@
-lua require('neoscroll').setup()
-
+lua << EOF
+require('neoscroll').setup({
+    easing_function = "quadratic"
+})
+EOF

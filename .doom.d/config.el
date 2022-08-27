@@ -75,7 +75,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
- (setq projectile-project-search-path '(("~/gitlab" . 2) ("~/github" . 2) "~/org" ))
+ (setq projectile-project-search-path '(("~/github" . 2) "~/org" ))
 (add-hook! 'org-mode-hook
            #'+org-pretty-mode #'mixed-pitch-mode)
 

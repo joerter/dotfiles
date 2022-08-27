@@ -4,7 +4,8 @@ nnoremap <silent><leader>bl :BufferLineCycleNext<CR>
 nnoremap <silent><leader>bh :BufferLineCyclePrev<CR>
 
 nnoremap <silent><leader>bp :BufferLinePick<CR>
-nnoremap <silent><leader>bd :bdelete<CR>
+nnoremap <silent><leader>bdd :bdelete<CR>
+nnoremap <silent><leader>bdp :BufferLinePickClose<CR>
 
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><leader>be :BufferLineMoveNext<CR>
