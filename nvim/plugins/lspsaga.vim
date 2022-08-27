@@ -6,7 +6,7 @@ vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 vnoremap <silent><leader>cf :Lspsaga lsp_finder<CR>
 
 nnoremap <silent><leader>ch :Lspsaga hover_doc<CR>
-nnoremap <silent><leader>ch :Lspsaga preview_definition<CR>
+nnoremap <silent><leader>cl :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent><leader>cr :Lspsaga rename<CR>
 
 " scroll down hover doc or scroll in definition preview
@@ -26,6 +26,14 @@ nnoremap <leader>li :lua print(vim.inspect(vim.lsp.buf_get_clients()))<CR>
 lua << EOF
 local saga = require 'lspsaga'
 saga.init_lsp_saga({
-    diagnostic_header = {"🙀", "😿", "😾", "😺"},
+    border_style = "double",
+    saga_winblend = 30,
+    code_action_lightbulb = {
+        enable = true,
+        sign = true,
+        enable_in_insert = true,
+        sign_priority = 20,
+        virtual_text = false,
+    },
 })
 EOF

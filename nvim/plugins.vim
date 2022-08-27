@@ -9,6 +9,8 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'MunifTanjim/eslint.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -54,6 +56,7 @@ Plug 'prettier/vim-prettier', {
 Plug 'jxnblk/vim-mdx-js'
 
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'pantharshit00/vim-prisma'
 
 " Clojure
 Plug 'luochen1990/rainbow'
