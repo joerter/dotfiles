@@ -10,7 +10,7 @@ source ~/github/joerter/dotfiles/nvim/maps.vim
 source ~/github/joerter/dotfiles/nvim/maps/files.vim
 source ~/github/joerter/dotfiles/nvim/maps/windows.vim
 
-" Plugins
+source ~/github/joerter/dotfiles/nvim/plugins/mason.vim
 source ~/github/joerter/dotfiles/nvim/plugins/bufferline.vim
 source ~/github/joerter/dotfiles/nvim/plugins/telescope.vim
 source ~/github/joerter/dotfiles/nvim/plugins/lualine.vim
