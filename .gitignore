@@ -3,3 +3,4 @@ nvim/plugged
 .newsboat/cache.db
 .newsboat/cache.db.lock
 tags
+.oh-my-zsh/custom/dinacare.zsh
