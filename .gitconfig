@@ -1,22 +1,23 @@
 [alias]
-	co = checkout
-	st = status
+	cam = !git add -A && git commit -m
 	cg = config
-	stats = shortlog
+	co = checkout
 	cob = checkout -b
 	cod = checkout develop
 	com = commit -m
-	cam = !git add -A && git commit -m
 	cz = !git-cz
-	po = push origin
-	psup = push --set-upstream origin
-	plo = pull origin
-	spl = !git stash && git pull origin && git stash pop
-	plom = !git pull origin $(git_main_branch)
 	fom = !git fetch && git merge origin/main
 	lgg = log --graph --color
 	lo = log --oneline --decorate --color --graph
 	mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+	plo = pull origin
+	plom = !git pull origin $(git_main_branch)
+	po = push origin
+	psup = push --set-upstream origin
+	recent = branch --sort=-committerdate
+	spl = !git stash && git pull origin && git stash pop
+	st = status
+	stats = shortlog
 [user]
 	name = John Oerter
 	email = joerter@dinacare.com
