@@ -41,23 +41,4 @@ lua <<EOF
       { name = 'buffer' },
     }
   })
-
-  -- Setup lspconfig.
-  require('lspconfig').tsserver.setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-    handlers = {
-       ["textDocument/publishDiagnostics"] = vim.lsp.with(
-         vim.lsp.diagnostic.on_publish_diagnostics, {
-           -- Disable virtual_text
-           virtual_text = false
-         }
-       ),
-    }
-  }
-
-  local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-  for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-  end
 EOF

@@ -1,10 +1,6 @@
 call plug#begin()
 
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
-
 Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -14,7 +10,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'MunifTanjim/eslint.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -43,22 +38,12 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 " HTML
 Plug 'mattn/emmet-vim'
 
-" JavaScript plugins
-" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-" Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
 
 Plug 'elzr/vim-json'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'branch': 'release/0.x'
-  \ }
-
 Plug 'jxnblk/vim-mdx-js'
-
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'pantharshit00/vim-prisma'
 
@@ -69,9 +54,6 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
-
-" Pug plugins
-" Plug 'digitaltoad/vim-pug'
 
 " Ledger
 Plug 'ledger/vim-ledger'
