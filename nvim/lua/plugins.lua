@@ -1,3 +1,16 @@
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -33,16 +46,16 @@ return require('packer').startup(function(use)
 
 
   use  {
+    'nvim-lualine/lualine.nvim',
     'tpope/vim-endwise',
-    '9mm/vim-closer',
+    'rstacruz/vim-closer',
     'lewis6991/gitsigns.nvim',
     'tpope/vim-sleuth',
     'tpope/vim-commentary',
     'raimondi/delimitmate',
     'tpope/vim-fugitive',
-    'hoob3rt/lualine.nvim',
     'akinsho/bufferline.nvim',
-    {'dracula/vim', as = 'dracula'},
+    'Mofiqul/dracula.nvim',
     'mattn/emmet-vim',
     'yuezk/vim-js',
     'maxmellon/vim-jsx-pretty',
@@ -56,4 +69,8 @@ return require('packer').startup(function(use)
     'tpope/vim-surround',
     'ledger/vim-ledger',
   }
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
