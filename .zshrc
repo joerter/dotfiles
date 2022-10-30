@@ -89,3 +89,6 @@ export NVM_DIR=~/.nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/opt/python@3.9/libexec/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
