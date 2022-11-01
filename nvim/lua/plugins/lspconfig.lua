@@ -1,35 +1,3 @@
-  " on_attach = function(client, bufnr)
-  "   if client.supports_method("textDocument/formatting") then
-  "     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-  "     vim.api.nvim_create_autocmd("BufWritePre", {
-  "       group = augroup,
-  "       buffer = bufnr,
-  "       callback = function()
-  "         -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-  "         vim.lsp.buf.formatting_sync()
-  "       end,
-  "       })
-  "     end
-  " end,
-" lspconfig['prettier'].setup {
-"   on_attach = function(client, bufnr)
-"     formatting_callback(client, bufnr)
-"   end
-" }
-" require("mason").setup()
-" require("mason-lspconfig").setup()
-" lspconfig['eslint'].setup {
-"   handlers = {
-"      ["textDocument/publishDiagnostics"] = vim.lsp.with(
-"        vim.lsp.diagnostic.on_publish_diagnostics, {
-"          -- Disable virtual_text
-"          virtual_text = false
-"        }
-"      ),
-"   }
-" }
-
-lua << EOF
 local lspconfig = require 'lspconfig'
 local null_ls = require 'null-ls'
 local util = require 'vim.lsp.util'
@@ -54,9 +22,8 @@ null_ls.setup({
     formatting_callback(client, bufnr)
   end
 })
-
--- Setup lspconfig.
-lspconfig.tsserver.setup {
+  -- Setup lspconfig.
+require('lspconfig').tsserver.setup {
   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
   handlers = {
      ["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -73,4 +40,3 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
-EOF
