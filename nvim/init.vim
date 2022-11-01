@@ -17,7 +17,7 @@ source ~/github/joerter/dotfiles/nvim/plugins/bufferline.vim
 source ~/github/joerter/dotfiles/nvim/plugins/telescope.vim
 source ~/github/joerter/dotfiles/nvim/plugins/lualine.vim
 source ~/github/joerter/dotfiles/nvim/plugins/nvim-tree.vim
-" source ~/github/joerter/dotfiles/nvim/plugins/prettier.vim
+source ~/github/joerter/dotfiles/nvim/plugins/prettier.vim
 source ~/github/joerter/dotfiles/nvim/plugins/emmet.vim
 source ~/github/joerter/dotfiles/nvim/plugins/rainbow-parentheses.vim
 source ~/github/joerter/dotfiles/nvim/plugins/sexp.vim
@@ -28,7 +28,7 @@ source ~/github/joerter/dotfiles/nvim/plugins/dashboard-nvim.vim
 source ~/github/joerter/dotfiles/nvim/plugins/vim-vsnip.vim
 source ~/github/joerter/dotfiles/nvim/plugins/nvim-cmp.vim
 source ~/github/joerter/dotfiles/nvim/plugins/fugitive.vim
-source ~/github/joerter/dotfiles/nvim/plugins/neoscroll.vim
+" source ~/github/joerter/dotfiles/nvim/plugins/neoscroll.vim
 source ~/github/joerter/dotfiles/nvim/plugins/nvim-colorizer.vim
 " source ~/github/joerter/dotfiles/nvim/plugins/eslint.vim
 

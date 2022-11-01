@@ -25,7 +25,5 @@ nnoremap <leader>li :lua print(vim.inspect(vim.lsp.buf_get_clients()))<CR>
 
 lua << EOF
 local saga = require 'lspsaga'
-saga.init_lsp_saga({
-    diagnostic_header = {"🙀", "😿", "😾", "😺"},
-})
+saga.init_lsp_saga({})
 EOF
