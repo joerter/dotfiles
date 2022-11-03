@@ -139,6 +139,16 @@ _G.packer_plugins = {
     path = "/Users/joerter/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/Users/joerter/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
+  },
+  neon = {
+    loaded = true,
+    path = "/Users/joerter/.local/share/nvim/site/pack/packer/start/neon",
+    url = "https://github.com/rafamadriz/neon"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/joerter/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -268,6 +278,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/joerter/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-terraform"] = {
+    loaded = true,
+    path = "/Users/joerter/.local/share/nvim/site/pack/packer/start/vim-terraform",
+    url = "https://github.com/hashivim/vim-terraform"
   },
   ["vim-vsnip"] = {
     loaded = true,

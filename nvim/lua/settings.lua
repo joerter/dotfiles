@@ -14,10 +14,11 @@ o.incsearch = true
 o.wildmenu = true
 o.autoread = true
 o.background = "dark"
-vim.cmd[[colorscheme dracula]]
+--vim.cmd[[colorscheme dracula]]
 
-wo.cursorcolumn = true
-wo.cursorline = true
+
+-- wo.cursorcolumn = true
+-- wo.cursorline = true
 wo.relativenumber = true
 wo.number = true
 wo.numberwidth = 1

@@ -49,13 +49,11 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     'tpope/vim-endwise',
     'rstacruz/vim-closer',
-    'lewis6991/gitsigns.nvim',
     'tpope/vim-sleuth',
     'tpope/vim-commentary',
     'raimondi/delimitmate',
     'tpope/vim-fugitive',
     'akinsho/bufferline.nvim',
-    'Mofiqul/dracula.nvim',
     'mattn/emmet-vim',
     'yuezk/vim-js',
     'maxmellon/vim-jsx-pretty',
@@ -70,6 +68,13 @@ return require('packer').startup(function(use)
     'ledger/vim-ledger',
     'lewis6991/gitsigns.nvim',
     'lukas-reineke/indent-blankline.nvim',
+    'hashivim/vim-terraform',
+  }
+
+  use {
+    'Mofiqul/dracula.nvim',
+    'marko-cerovac/material.nvim',
+    'rafamadriz/neon',
   }
 
   if packer_bootstrap then
