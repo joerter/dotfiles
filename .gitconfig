@@ -24,7 +24,7 @@
 [pull]
 	rebase = false
 [core]
-  editor = nvim
+	editor = nvim
 [github]
 	user = joerter
 [push]

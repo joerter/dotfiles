@@ -14,10 +14,9 @@ o.incsearch = true
 o.wildmenu = true
 o.autoread = true
 o.background = "dark"
-vim.cmd[[colorscheme dracula]]
-
-wo.cursorcolumn = true
-wo.cursorline = true
+--vim.cmd[[colorscheme dracula]]
+-- wo.cursorcolumn = true
+-- wo.cursorline = true
 wo.relativenumber = true
 wo.number = true
 wo.numberwidth = 1
@@ -34,4 +33,3 @@ bo.expandtab = true
 bo.smartindent = true
 --bo.filetype = "plugin indent on"
 --o.listchars = "tab:▸\ ,eol:¬"
---o.wildignore = o.wildignore + "*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*\\tmp\\*,*.swp,*.zip,*.exe,*\\bin\\*,*\\packages\\*,*\\obj\\*,*/node_modules/*" 
