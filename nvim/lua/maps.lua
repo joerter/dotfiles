@@ -17,6 +17,8 @@ map('n', '<leader>wv', ':vsplit<CR>', options)
 
 map('n', '<leader>w"', ':split<CR>', options)
 map('n', '<leader>ws', ':split<CR>', options)
+map('n', '<leader>wz', '<C-w>|<CR><C-w>_<CR>', options)
+map('n', '<leader>w=', '<C-w>=', options)
 
 map('n', '<leader>wj', '<C-w>j', options)
 map('n', '<leader>wh', '<C-w>h', options)
