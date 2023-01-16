@@ -6,6 +6,7 @@ map('v', '<leader>ca', ':<C-U>Lspsaga range_code_action<CR>', options)
 map('n', '<leader>cf', ':Lspsaga lsp_finder<CR>', options)
 map('n', '<leader>ch', ':Lspsaga hover_doc<CR>', options)
 map('n', '<leader>cl', ':Lspsaga show_line_diagnostics<CR>', options)
+map('n', '<leader>cb', ':Lspsaga show_buf_diagnostics<CR>', options)
 map('n', '<leader>cr', ':Lspsaga rename<CR>', options)
 map('n', '<leader>cs', ':Lspsaga signature_help<CR>', options)
 
@@ -19,16 +20,3 @@ map('n', '<leader>cs', ':Lspsaga signature_help<CR>', options)
 
 -- print lsp info
 -- nnoremap <leader>li :lua print(vim.inspect(vim.lsp.buf_get_clients()))<CR>
-
-local saga = require 'lspsaga'
-saga.init_lsp_saga({
-    border_style = "double",
-    saga_winblend = 30,
-    code_action_lightbulb = {
-        enable = true,
-        sign = true,
-        enable_in_insert = true,
-        sign_priority = 20,
-        virtual_text = false,
-    },
-})
