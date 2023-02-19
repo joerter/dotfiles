@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
   use {
     'neovim/nvim-lspconfig',          
     'hrsh7th/nvim-cmp',
-    'glepnir/lspsaga.nvim',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -28,6 +27,14 @@ return require('packer').startup(function(use)
     'hrsh7th/vim-vsnip',
     'jose-elias-alvarez/null-ls.nvim',
   }
+
+  use({
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+      config = function()
+          require('lspsaga').setup({})
+      end,
+  })
 
   -- nvim-tree / trouble
   use {
@@ -74,6 +81,12 @@ return require('packer').startup(function(use)
     'Mofiqul/dracula.nvim',
     'marko-cerovac/material.nvim',
     'rafamadriz/neon',
+  }
+
+  -- clojure
+  use {
+    'guns/vim-sexp',
+    'Olical/conjure'
   }
 
   if packer_bootstrap then

@@ -4,5 +4,6 @@ $HOME/github/dinacare
 $HOME/github/mui
 $HOME/github/pubnub
 $HOME/gitlab/joerter
+$HOME/gitlab/jacobobryant
 )
 CDC_REPOS_ONLY=false

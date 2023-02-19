@@ -19,16 +19,3 @@ map('n', '<leader>cs', ':Lspsaga signature_help<CR>', options)
 
 -- print lsp info
 -- nnoremap <leader>li :lua print(vim.inspect(vim.lsp.buf_get_clients()))<CR>
-
-local saga = require 'lspsaga'
-saga.init_lsp_saga({
-    border_style = "double",
-    saga_winblend = 30,
-    code_action_lightbulb = {
-        enable = true,
-        sign = true,
-        enable_in_insert = true,
-        sign_priority = 20,
-        virtual_text = false,
-    },
-})
