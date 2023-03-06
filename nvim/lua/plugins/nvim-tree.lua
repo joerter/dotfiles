@@ -6,7 +6,6 @@ map('n', '<leader>fr', ':NvimTreeRefresh<CR>', options)
 map('n', '<leader>ff', ':NvimTreeFindFile<CR>', options)
 
 require'nvim-tree'.setup {
-    ignore_ft_on_setup  = {'startify', 'dashboard'},
     update_focused_file = {
       enable      = false,
       update_cwd  = false,

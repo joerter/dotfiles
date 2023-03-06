@@ -75,12 +75,14 @@ return require('packer').startup(function(use)
     'lukas-reineke/indent-blankline.nvim',
     'hashivim/vim-terraform',
     'tpope/vim-cucumber',
+    'iloginow/vim-stylus',
   }
 
   use {
     'Mofiqul/dracula.nvim',
     'marko-cerovac/material.nvim',
     'rafamadriz/neon',
+    "catppuccin/nvim", as = "catppuccin"
   }
 
   if packer_bootstrap then
