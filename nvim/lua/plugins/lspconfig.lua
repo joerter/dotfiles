@@ -23,7 +23,7 @@ null_ls.setup({
   end
 })
   -- Setup lspconfig.
-require('lspconfig').tsserver.setup {
+lspconfig.tsserver.setup {
   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
   handlers = {
      ["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -34,6 +34,8 @@ require('lspconfig').tsserver.setup {
      ),
   }
 }
+
+lspconfig.clojure_lsp.setup{}
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

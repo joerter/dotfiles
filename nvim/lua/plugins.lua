@@ -52,13 +52,15 @@ return require('packer').startup(function(use)
   }
 
   use  {
-    'nvim-lualine/lualine.nvim',
     'tpope/vim-endwise',
-    'rstacruz/vim-closer',
     'tpope/vim-sleuth',
     'tpope/vim-commentary',
-    'raimondi/delimitmate',
     'tpope/vim-fugitive',
+    'tpope/vim-repeat',
+    'tpope/vim-surround',
+    'nvim-lualine/lualine.nvim',
+    'rstacruz/vim-closer',
+    'raimondi/delimitmate',
     'akinsho/bufferline.nvim',
     'mattn/emmet-vim',
     'yuezk/vim-js',
@@ -69,8 +71,6 @@ return require('packer').startup(function(use)
     'norcalli/nvim-colorizer.lua',
     'pantharshit00/vim-prisma',
     'p00f/nvim-ts-rainbow',
-    'tpope/vim-repeat',
-    'tpope/vim-surround',
     'ledger/vim-ledger',
     'lewis6991/gitsigns.nvim',
     'lukas-reineke/indent-blankline.nvim',
@@ -86,6 +86,7 @@ return require('packer').startup(function(use)
   -- clojure
   use {
     'guns/vim-sexp',
+    'tpope/vim-sexp-mappings-for-regular-people',
     'Olical/conjure'
   }
 
