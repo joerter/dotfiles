@@ -35,14 +35,6 @@ return require('packer').startup(function(use)
       end,
   })
 
-  use({
-      "glepnir/lspsaga.nvim",
-      branch = "main",
-      config = function()
-          require('lspsaga').setup({})
-      end,
-  })
-
   -- nvim-tree / trouble
   use {
     'kyazdani42/nvim-web-devicons',
@@ -53,9 +45,16 @@ return require('packer').startup(function(use)
   -- Telescope
   use {
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end,
   }
 
   use  {
@@ -83,12 +82,14 @@ return require('packer').startup(function(use)
     'lukas-reineke/indent-blankline.nvim',
     'hashivim/vim-terraform',
     'tpope/vim-cucumber',
+    'iloginow/vim-stylus',
   }
 
   use {
     'Mofiqul/dracula.nvim',
     'marko-cerovac/material.nvim',
     'rafamadriz/neon',
+    "catppuccin/nvim", as = "catppuccin"
   }
 
   -- clojure
@@ -96,6 +97,10 @@ return require('packer').startup(function(use)
     'guns/vim-sexp',
     'tpope/vim-sexp-mappings-for-regular-people',
     'Olical/conjure'
+  }
+
+  use {
+    'github/copilot.vim'
   }
 
   if packer_bootstrap then
