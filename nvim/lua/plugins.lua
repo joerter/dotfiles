@@ -50,6 +50,8 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
   }
 
+  use { 'ThePrimeagen/harpoon'}
+
   use  {
     'nvim-lualine/lualine.nvim',
     'tpope/vim-endwise',
