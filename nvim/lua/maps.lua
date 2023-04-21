@@ -4,6 +4,9 @@ local map = vim.api.nvim_set_keymap
 map('n', '<Space>', '', {})
 vim.g.mapleader = ' '  -- 'vim.g' sets global variables
 
+-- local leader
+vim.g.maplocalleader = ','  -- 'vim.g' sets global variables
+
 
 options = { noremap = true }
 map('i', 'jk', '<esc>', options)

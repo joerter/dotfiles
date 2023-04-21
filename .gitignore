@@ -5,3 +5,7 @@ nvim/plugged
 tags
 .oh-my-zsh/custom/dinacare.zsh
 packer_compiled.lua
+.clj-kondo/
+.clojure/
+.lsp/
+.nrepl-port

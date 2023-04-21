@@ -45,21 +45,30 @@ return require('packer').startup(function(use)
   -- Telescope
   use {
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
   }
 
   use { 'ThePrimeagen/harpoon'}
 
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end,
+  }
+
   use  {
-    'nvim-lualine/lualine.nvim',
     'tpope/vim-endwise',
-    'rstacruz/vim-closer',
     'tpope/vim-sleuth',
     'tpope/vim-commentary',
-    'raimondi/delimitmate',
     'tpope/vim-fugitive',
+    'tpope/vim-repeat',
+    'tpope/vim-surround',
+    'nvim-lualine/lualine.nvim',
+    'rstacruz/vim-closer',
+    'raimondi/delimitmate',
     'akinsho/bufferline.nvim',
     'mattn/emmet-vim',
     'yuezk/vim-js',
@@ -70,8 +79,6 @@ return require('packer').startup(function(use)
     'norcalli/nvim-colorizer.lua',
     'pantharshit00/vim-prisma',
     'p00f/nvim-ts-rainbow',
-    'tpope/vim-repeat',
-    'tpope/vim-surround',
     'ledger/vim-ledger',
     'lewis6991/gitsigns.nvim',
     'lukas-reineke/indent-blankline.nvim',
@@ -85,6 +92,13 @@ return require('packer').startup(function(use)
     'marko-cerovac/material.nvim',
     'rafamadriz/neon',
     "catppuccin/nvim", as = "catppuccin"
+  }
+
+  -- clojure
+  use {
+    'guns/vim-sexp',
+    'tpope/vim-sexp-mappings-for-regular-people',
+    'Olical/conjure'
   }
 
   if packer_bootstrap then

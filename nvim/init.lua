@@ -2,6 +2,7 @@ require('plugins')
 
 require('settings')
 require('maps')
+require('neovide')
 
 -- require('plugins/bufferline')
 require('plugins/fugitive')

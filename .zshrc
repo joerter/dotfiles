@@ -84,11 +84,12 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR=~/.nvm
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-export PATH="/opt/homebrew/bin:/opt/homebrew/opt/python@3.9/libexec/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/opt/homebrew/opt/python@3.9/libexec/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$PATH"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform

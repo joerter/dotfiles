@@ -3,7 +3,7 @@ options = { noremap = true }
 
 map('n', '<leader>ft', ':NvimTreeToggle<CR>', options)
 map('n', '<leader>fr', ':NvimTreeRefresh<CR>', options)
-map('n', '<leader>ff', ':NvimTreeFindFile<CR>', options)
+map('n', '<leader>ff', ':NvimTreeFindFileToggle<CR>', options)
 
 require'nvim-tree'.setup {
     update_focused_file = {
