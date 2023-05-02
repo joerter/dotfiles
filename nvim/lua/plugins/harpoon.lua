@@ -5,3 +5,9 @@ map('n', '<leader>hh', ':lua require("harpoon.ui").toggle_quick_menu()<cr>', opt
 map('n', '<leader>hm', ':lua require("harpoon.mark").add_file()<cr>', options)
 map('n', '<leader>hn', ':lua require("harpoon.ui").nav_next()<cr>', options)
 map('n', '<leader>hp', ':lua require("harpoon.ui").nav_prev()<cr>', options)
+
+require("harpoon").setup({
+    menu = {
+        width = vim.api.nvim_win_get_width(0) - 4,
+    }
+})
