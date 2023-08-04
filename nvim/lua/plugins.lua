@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
-    'jose-elias-alvarez/null-ls.nvim',
+    'mhartington/formatter.nvim',
   }
   use({
       "glepnir/lspsaga.nvim",
