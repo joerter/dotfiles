@@ -26,51 +26,12 @@ return require('packer').startup(function(use)
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
     'mhartington/formatter.nvim',
-  }
-  use({
-      "glepnir/lspsaga.nvim",
-      branch = "main",
-      config = function()
-          require('lspsaga').setup({})
-      end,
-  })
-
-  -- nvim-tree / trouble
-  use {
+    'mfussenegger/nvim-lint',
     'kyazdani42/nvim-web-devicons',
-    -- 'kyazdani42/nvim-tree.lua',
     'folke/trouble.nvim',
-  }
-
-  -- neotree
-  use {
-  "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    requires = { 
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    }
-  }
-
-  -- Telescope
-  use {
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
-  }
-
-  use { 'ThePrimeagen/harpoon'}
-
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-        ts_update()
-    end,
-  }
-
-  use  {
     'tpope/vim-endwise',
     'tpope/vim-sleuth',
     'tpope/vim-commentary',
@@ -80,7 +41,6 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     'rstacruz/vim-closer',
     'raimondi/delimitmate',
-    'akinsho/bufferline.nvim',
     'mattn/emmet-vim',
     'yuezk/vim-js',
     'maxmellon/vim-jsx-pretty',
@@ -96,20 +56,42 @@ return require('packer').startup(function(use)
     'hashivim/vim-terraform',
     'tpope/vim-cucumber',
     'iloginow/vim-stylus',
-  }
-
-  use {
-    'Mofiqul/dracula.nvim',
-    'marko-cerovac/material.nvim',
-    'rafamadriz/neon',
     "catppuccin/nvim", as = "catppuccin"
   }
+  use({
+      "glepnir/lspsaga.nvim",
+      branch = "main",
+      config = function()
+          require('lspsaga').setup({})
+      end,
+  })
 
-  -- clojure
   use {
-    'guns/vim-sexp',
-    'tpope/vim-sexp-mappings-for-regular-people',
-    'Olical/conjure'
+    'j-hui/fidget.nvim',
+    tag = 'legacy',
+    config = function()
+      require("fidget").setup {
+        -- options
+      }
+    end,
+  }
+
+  use {
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end,
   }
 
   use { 

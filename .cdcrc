@@ -2,6 +2,7 @@ CDC_DIRS=(
 $HOME/github/joerter
 $HOME/github/dinacare
 $HOME/github/connecticutcodes
+$HOME/github/surge-momentum
 $HOME/github/mui
 $HOME/github/pubnub
 $HOME/gitlab/joerter
