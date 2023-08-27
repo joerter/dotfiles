@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
 
   -- LSP
   use {
-    'neovim/nvim-lspconfig',          
+    'neovim/nvim-lspconfig',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
@@ -52,18 +52,16 @@ return require('packer').startup(function(use)
     'p00f/nvim-ts-rainbow',
     'ledger/vim-ledger',
     'lewis6991/gitsigns.nvim',
-    'lukas-reineke/indent-blankline.nvim',
     'hashivim/vim-terraform',
     'tpope/vim-cucumber',
     'iloginow/vim-stylus',
     "catppuccin/nvim", as = "catppuccin"
   }
+
+    --'lukas-reineke/indent-blankline.nvim',
   use({
-      "glepnir/lspsaga.nvim",
+      "nvimdev/lspsaga.nvim",
       branch = "main",
-      config = function()
-          require('lspsaga').setup({})
-      end,
   })
 
   use {
@@ -79,7 +77,7 @@ return require('packer').startup(function(use)
   use {
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
@@ -94,7 +92,7 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use { 
+  use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
