@@ -56,8 +56,7 @@ return require('packer').startup(function(use)
     'tpope/vim-cucumber',
     'iloginow/vim-stylus',
     "catppuccin/nvim", as = "catppuccin",
-    'ray-x/go.nvim',
-    'ray-x/guihua.lua'
+    'dense-analysis/ale',
   }
 
     --'lukas-reineke/indent-blankline.nvim',
@@ -122,6 +121,12 @@ return require('packer').startup(function(use)
     'guns/vim-sexp',
     'tpope/vim-sexp-mappings-for-regular-people'
   }
+
+  -- go
+  -- use {
+  --   'ray-x/go.nvim',
+  --   'ray-x/guihua.lua',
+  -- }
 
   if packer_bootstrap then
     require('packer').sync()
