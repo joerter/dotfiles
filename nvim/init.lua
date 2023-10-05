@@ -18,3 +18,5 @@ require('plugins/rainbow-parentheses')
 require('plugins/telescope')
 require('plugins/trouble')
 require('plugins/go')
+
+require('languages/clojure')
