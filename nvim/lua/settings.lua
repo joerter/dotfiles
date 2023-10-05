@@ -26,10 +26,16 @@ wo.foldcolumn = "0"
 
 bo.swapfile = false
 bo.syntax = "on"
-bo.tabstop = 2
-bo.shiftwidth = 2
-bo.softtabstop = 2
-bo.expandtab = true
-bo.smartindent = true
+
+vim.api.nvim_set_var('shiftwidth', 4)
+vim.api.nvim_set_var('tabstop', 4)
+vim.api.nvim_set_var('softtabstop', 4)
+vim.api.nvim_set_var('expandtab', true)
+vim.api.nvim_set_var('smartindent', true)
+-- o.tabstop = 4
+-- o.shiftwidth = 4
+-- o.softtabstop = 4
+-- o.expandtab = true
+-- o.smartindent = true
 --bo.filetype = "plugin indent on"
 --o.listchars = "tab:▸\ ,eol:¬"

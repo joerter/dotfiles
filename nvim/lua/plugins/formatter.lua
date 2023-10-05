@@ -38,6 +38,9 @@ require("formatter").setup {
         }
       end
     },
+    html = {
+        require("formatter.filetypes.html").prettier
+    },
     typescript = {
         require("formatter.filetypes.typescript").prettier
     },

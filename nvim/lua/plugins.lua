@@ -55,7 +55,9 @@ return require('packer').startup(function(use)
     'hashivim/vim-terraform',
     'tpope/vim-cucumber',
     'iloginow/vim-stylus',
-    "catppuccin/nvim", as = "catppuccin"
+    "catppuccin/nvim", as = "catppuccin",
+    'ray-x/go.nvim',
+    'ray-x/guihua.lua'
   }
 
     --'lukas-reineke/indent-blankline.nvim',
@@ -112,6 +114,13 @@ return require('packer').startup(function(use)
         panel = { enabled = false },
       })
     end
+  }
+
+  -- clojure
+  use {
+    'Olical/conjure',
+    'guns/vim-sexp',
+    'tpope/vim-sexp-mappings-for-regular-people'
   }
 
   if packer_bootstrap then
