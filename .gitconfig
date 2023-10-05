@@ -5,6 +5,7 @@
 	cob = checkout -b
 	cod = checkout develop
 	com = commit -m
+	cp = cherry-pick
 	cz = !git-cz
 	fom = !git fetch && git merge origin/main
 	lgg = log --graph --color
