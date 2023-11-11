@@ -14,7 +14,11 @@ lspconfig.tsserver.setup {
   }
 }
 
-lspconfig.clojure_lsp.setup{}
+lspconfig.clojure_lsp.setup{
+  on_attach = function(client, bufnr)
+    vim.keymap.set('n', '<leader>fr', '<cmd>lua vim.lsp.buf.format()<CR>', { noremap = true })
+  end,
+}
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
