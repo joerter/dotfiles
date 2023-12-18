@@ -23,6 +23,7 @@ wo.numberwidth = 1
 wo.wrap = false
 wo.foldmethod = "indent"
 wo.foldcolumn = "0"
+wo.colorcolumn = "80"
 
 bo.swapfile = false
 bo.syntax = "on"
