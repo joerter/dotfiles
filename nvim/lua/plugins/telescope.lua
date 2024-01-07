@@ -18,7 +18,9 @@ map('n', '<leader>tr', '<cmd>Telescope registers<cr>', options)
 map('n', '<leader>tt', '<cmd>Telescope tags<cr>', options)
 
 local actions = require("telescope.actions")
-local trouble = require("trouble.providers.telescope")
+-- local trouble = require("trouble.providers.telescope")
+-- ["<c-t>"] = trouble.open_with_trouble
+-- n = { ["<c-t>"] = trouble.open_with_trouble }
 
 require("telescope").setup({
   defaults = {
@@ -27,9 +29,7 @@ require("telescope").setup({
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
         ["<esc>"] = actions.close,
-        ["<c-t>"] = trouble.open_with_trouble
       },
-      n = { ["<c-t>"] = trouble.open_with_trouble }
     }
   }
 })
