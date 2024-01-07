@@ -41,5 +41,21 @@ require("lazy").setup({
 	},
 	{
 		'tpope/vim-fugitive'
-	}
+	},
+	{
+		'nvim-treesitter/nvim-treesitter'
+	},
+	{
+		'stevearc/dressing.nvim',
+		opts = {},
+	},
+	{
+		"williamboman/mason.nvim",
+		dependencies = {
+			'williamboman/mason-lspconfig.nvim',
+			'neovim/nvim-lspconfig',
+			'hrsh7th/cmp-nvim-lsp',
+			"hrsh7th/nvim-cmp",
+		}
+	},
 })

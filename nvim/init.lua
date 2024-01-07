@@ -7,6 +7,7 @@ require('plugins/telescope')
 require('plugins/neotree')
 require('plugins/spectre')
 require('plugins/mini')
+require('plugins/mason')
 require('plugins/fugitive')
 
 -- require('plugins/ale')
