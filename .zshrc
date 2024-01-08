@@ -88,10 +88,6 @@ export NVM_DIR=~/.nvm
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# export PATH="/opt/homebrew/bin:/opt/homebrew/opt/python@3.9/libexec/bin:/usr/local/bin"
-export GOPATH=/usr/local/go
-export PATH=$PATH:"/opt/homebrew/opt/sqlite/bin":$GOPATH/bin
-
 # bun completions
 [ -s "/Users/joerter/.bun/_bun" ] && source "/Users/joerter/.bun/_bun"
 
