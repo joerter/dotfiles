@@ -61,4 +61,11 @@ require("lazy").setup({
 				'nvimdev/lspsaga.nvim',
 			}
 		},
+		{
+			'mhartington/formatter.nvim',
+			opts = {},
+		},
+		{
+			'mattn/emmet-vim',
+		}
 	})
