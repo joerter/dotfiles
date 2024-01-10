@@ -67,5 +67,8 @@ require("lazy").setup({
 		},
 		{
 			'mattn/emmet-vim',
+		},
+		{
+			'tpope/vim-surround',
 		}
 	})
