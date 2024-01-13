@@ -61,4 +61,7 @@ require("lazy").setup({
 				'nvimdev/lspsaga.nvim',
 			}
 		},
+		{
+			'ledger/vim-ledger'
+		}
 	})
