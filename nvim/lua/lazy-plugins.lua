@@ -62,6 +62,15 @@ require("lazy").setup({
 			}
 		},
 		{
+			'mhartington/formatter.nvim'
+		}
+		{
 			'ledger/vim-ledger'
+		},
+		{
+			'mattn/emmet-vim'
+		},
+		{
+			'tpope/vim-surround'
 		}
 	})
