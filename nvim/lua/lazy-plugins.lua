@@ -63,7 +63,7 @@ require("lazy").setup({
 		},
 		{
 			'mhartington/formatter.nvim'
-		}
+		},
 		{
 			'ledger/vim-ledger'
 		},
