@@ -23,54 +23,85 @@ require("lazy").setup({
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		dependencies = { 
 			'nvim-lua/plenary.nvim', 
-			'nvim-telescope/telescope-fzf-native.nvim' }
-		},
-		{
-			"nvim-neo-tree/neo-tree.nvim",
-			branch = "v3.x",
-			dependencies = {
-				"nvim-lua/plenary.nvim",
-				"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-				"MunifTanjim/nui.nvim",
-				-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-			}
-		},
-		{
-			'nvim-pack/nvim-spectre',
-			dependencies = {
-				'nvim-lua/plenary.nvim',
-			}
-		},
-		{
-			'tpope/vim-fugitive'
-		},
-		{
-			'nvim-treesitter/nvim-treesitter'
-		},
-		{
-			'stevearc/dressing.nvim',
-			opts = {},
-		},
-		{
-			"williamboman/mason.nvim",
-			dependencies = {
-				'williamboman/mason-lspconfig.nvim',
-				'neovim/nvim-lspconfig',
-				'hrsh7th/cmp-nvim-lsp',
-				"hrsh7th/nvim-cmp",
-				'nvimdev/lspsaga.nvim',
-			}
-		},
-		{
-			'mhartington/formatter.nvim'
-		},
-		{
-			'ledger/vim-ledger'
-		},
-		{
-			'mattn/emmet-vim'
-		},
-		{
-			'tpope/vim-surround'
+			'nvim-telescope/telescope-fzf-native.nvim' 
 		}
-	})
+	},
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		}
+	},
+	{
+		'nvim-pack/nvim-spectre',
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+		}
+	},
+	{
+		'tpope/vim-fugitive'
+	},
+	{
+		'nvim-treesitter/nvim-treesitter'
+	},
+	{
+		'stevearc/dressing.nvim',
+		opts = {},
+	},
+	{
+		"williamboman/mason.nvim",
+		dependencies = {
+			'williamboman/mason-lspconfig.nvim',
+			'neovim/nvim-lspconfig',
+			'hrsh7th/cmp-nvim-lsp',
+			"hrsh7th/nvim-cmp",
+			'nvimdev/lspsaga.nvim',
+		}
+	},
+	{
+		'mhartington/formatter.nvim'
+	},
+	{
+		'ledger/vim-ledger'
+	},
+	{
+		'mattn/emmet-vim'
+	},
+	{
+		'tpope/vim-surround'
+	},
+	{
+		'Olical/conjure'
+	},
+	{
+		'tpope/vim-sexp-mappings-for-regular-people',
+		dependencies = {
+			'guns/vim-sexp'
+		}
+	},
+	{
+		"nvim-neorg/neorg",
+		build = ":Neorg sync-parsers",
+		-- tag = "*",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("neorg").setup {
+				load = {
+					["core.defaults"] = {}, -- Loads default behaviour
+					["core.concealer"] = {}, -- Adds pretty icons to your documents
+					["core.dirman"] = { -- Manages Neorg workspaces
+					config = {
+						workspaces = {
+							notes = "~/gitlab/joerter/obsidian",
+						},
+					},
+				},
+			},
+		}
+	end,
+},
+})
