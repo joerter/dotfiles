@@ -23,6 +23,8 @@ lspconfig.clojure_lsp.setup{
   end,
 }
 
+lspconfig.tailwindcss.setup {}
+
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type

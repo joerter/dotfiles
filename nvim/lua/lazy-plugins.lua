@@ -84,6 +84,9 @@ require("lazy").setup({
 		}
 	},
 	{
+    'mfussenegger/nvim-lint'
+	},
+	{
 		"nvim-neorg/neorg",
 		build = ":Neorg sync-parsers",
 		-- tag = "*",

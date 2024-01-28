@@ -1,6 +1,7 @@
 require('lint').linters_by_ft = {
   javascript = {'eslint'},
   typescript = {'eslint'},
+  clojure = {'clj-kondo'},
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {

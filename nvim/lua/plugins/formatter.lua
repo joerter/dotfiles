@@ -67,18 +67,3 @@ require("formatter").setup {
 local map = vim.api.nvim_set_keymap
 options = { noremap = true }
 map('n', '<leader>fr', ':FormatWrite<CR>', options)
-
--- function! ToggleFormatOnSave()
---     if !exists('#FormatAutogroup#BufWritePost')
---         augroup FormatAutogroup
---             autocmd!
---             autocmd BufWritePost * FormatWrite
---         augroup END
---     else
---         augroup FormatAutogroup
---             autocmd!
---         augroup END
---     endif
--- endfunction
-
--- nnoremap <F4> :call ToggleFormatOnSave()<CR>
