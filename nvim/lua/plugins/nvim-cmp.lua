@@ -9,18 +9,11 @@ local has_words_before = function()
 end
 
 cmp.setup({
-  -- snippet = {
-  --   expand = function(args)
-  --     -- For `vsnip` user.
-  --     vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
-  --
-  --     -- For `luasnip` user.
-  --     -- require('luasnip').lsp_expand(args.body)
-  --
-  --     -- For `ultisnips` user.
-  --     -- vim.fn["vsnip#anonymous"](args.body)
-  --   end,
-  -- },
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
   mapping = {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -41,7 +34,7 @@ cmp.setup({
     { name = 'nvim_lsp' },
 
     -- For vsnip user.
-    --{ name = 'vsnip' },
+    { name = 'vsnip' },
 
     -- For luasnip user.
     -- { name = 'luasnip' },
