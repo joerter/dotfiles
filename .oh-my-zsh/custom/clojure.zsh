@@ -1,0 +1,1 @@
+ alias biff='clj -Mdev'
