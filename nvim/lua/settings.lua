@@ -14,7 +14,7 @@ o.incsearch = true
 o.wildmenu = true
 o.autoread = true
 o.background = "dark"
---vim.cmd[[colorscheme dracula]]
+--vim.cmd[[colorscheme gruvbox]]
 -- wo.cursorcolumn = true
 -- wo.cursorline = true
 wo.relativenumber = true
