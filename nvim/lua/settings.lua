@@ -21,7 +21,7 @@ wo.relativenumber = true
 wo.number = true
 wo.numberwidth = 1
 wo.wrap = false
-wo.foldmethod = "indent"
+wo.foldmethod = "syntax"
 wo.foldcolumn = "0"
 wo.colorcolumn = "80"
 
