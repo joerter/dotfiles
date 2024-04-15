@@ -30,7 +30,7 @@ cmp.setup({
     ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
   },
   sources = {
-    --{ name = 'copilot', group_index = 2 },
+    { name = 'copilot', group_index = 2 },
     { name = 'nvim_lsp' },
 
     -- For vsnip user.
