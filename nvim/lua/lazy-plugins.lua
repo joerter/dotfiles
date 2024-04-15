@@ -16,9 +16,9 @@ require("lazy").setup({
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
-		dependencies = { 
-			'nvim-lua/plenary.nvim', 
-			'nvim-telescope/telescope-fzf-native.nvim' 
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			'nvim-telescope/telescope-fzf-native.nvim'
 		}
 	},
 	{
@@ -92,25 +92,4 @@ require("lazy").setup({
 			-- options
 		},
 	},
-	{
-		"nvim-neorg/neorg",
-		build = ":Neorg sync-parsers",
-		-- tag = "*",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("neorg").setup {
-				load = {
-					["core.defaults"] = {}, -- Loads default behaviour
-					["core.concealer"] = {}, -- Adds pretty icons to your documents
-					["core.dirman"] = { -- Manages Neorg workspaces
-					config = {
-						workspaces = {
-							notes = "~/gitlab/joerter/obsidian",
-						},
-					},
-				},
-			},
-		}
-	end,
-},
 })
