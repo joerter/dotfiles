@@ -12,8 +12,46 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+				{
+								"folke/trouble.nvim",
+								branch = "dev", -- IMPORTANT!
+								keys = {
+												{
+																"<leader>xx",
+																"<cmd>Trouble diagnostics toggle<cr>",
+																desc = "Diagnostics (Trouble)",
+												},
+												{
+																"<leader>xX",
+																"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+																desc = "Buffer Diagnostics (Trouble)",
+												},
+												{
+																"<leader>cs",
+																"<cmd>Trouble symbols toggle focus=false<cr>",
+																desc = "Symbols (Trouble)",
+												},
+												{
+																"<leader>cl",
+																"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+																desc = "LSP Definitions / references / ... (Trouble)",
+												},
+												{
+																"<leader>xL",
+																"<cmd>Trouble loclist toggle<cr>",
+																desc = "Location List (Trouble)",
+												},
+												{
+																"<leader>xQ",
+																"<cmd>Trouble qflist toggle<cr>",
+																desc = "Quickfix List (Trouble)",
+												},
+								},
+								opts = {}, -- for default options, refer to the configuration section for custom setup.
+				}
 				{ 'echasnovski/mini.nvim', version = '*' },
-				{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
+				--{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
+				{ "arcticicestudio/nord-vim" },
 				{
 								'nvim-telescope/telescope.nvim', tag = '0.1.5',
 								dependencies = {
@@ -93,46 +131,6 @@ require("lazy").setup({
 								},
 				},
 				{
-								"zbirenbaum/copilot-cmp",
-								dependencies = {
-												"zbirenbaum/copilot.lua"
-								}
-				},
-				{
-  "folke/trouble.nvim",
-  branch = "dev", -- IMPORTANT!
-  keys = {
-    {
-      "<leader>xx",
-      "<cmd>Trouble diagnostics toggle<cr>",
-      desc = "Diagnostics (Trouble)",
-    },
-    {
-      "<leader>xX",
-      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      desc = "Buffer Diagnostics (Trouble)",
-    },
-    {
-      "<leader>cs",
-      "<cmd>Trouble symbols toggle focus=false<cr>",
-      desc = "Symbols (Trouble)",
-    },
-    {
-      "<leader>cl",
-      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-      desc = "LSP Definitions / references / ... (Trouble)",
-    },
-    {
-      "<leader>xL",
-      "<cmd>Trouble loclist toggle<cr>",
-      desc = "Location List (Trouble)",
-    },
-    {
-      "<leader>xQ",
-      "<cmd>Trouble qflist toggle<cr>",
-      desc = "Quickfix List (Trouble)",
-    },
-  },
-  opts = {}, -- for default options, refer to the configuration section for custom setup.
-}
+								'jaawerth/fennel.vim',
+				}
 })

@@ -38,6 +38,8 @@ lspconfig.tailwindcss.setup({
   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
 })
 
+lspconfig.fennel_ls.setup()
+
 -- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 -- for type, icon in pairs(signs) do
 --   local hl = "DiagnosticSign" .. type
