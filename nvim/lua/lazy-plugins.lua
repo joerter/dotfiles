@@ -13,7 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ 'echasnovski/mini.nvim', version = '*' },
-	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
+	--{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
+	{ "arcticicestudio/nord-vim" },
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		dependencies = {
@@ -92,4 +93,7 @@ require("lazy").setup({
 			-- options
 		},
 	},
+	{
+		'jaawerth/fennel.vim',
+	}
 })

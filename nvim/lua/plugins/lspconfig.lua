@@ -20,6 +20,9 @@ lspconfig.clojure_lsp.setup{
   end,
 }
 
+lspconfig.fennel_ls.setup()
+
+
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
