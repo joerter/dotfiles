@@ -48,7 +48,7 @@ require("lazy").setup({
 												},
 								},
 								opts = {}, -- for default options, refer to the configuration section for custom setup.
-				}
+				},
 				{ 'echasnovski/mini.nvim', version = '*' },
 				--{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
 				{ "arcticicestudio/nord-vim" },
@@ -132,5 +132,6 @@ require("lazy").setup({
 				},
 				{
 								'jaawerth/fennel.vim',
+								'zbirenbaum/copilot.lua'
 				}
 })
