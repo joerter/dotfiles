@@ -7,7 +7,7 @@ o.laststatus = 2
 o.scrolloff = 10
 o.sidescroll = 1
 o.showmatch = true
-o.foldlevelstart = 0
+o.foldlevelstart = 99
 o.wrapscan = true
 o.hlsearch = true
 o.incsearch = true
@@ -21,7 +21,7 @@ wo.relativenumber = true
 wo.number = true
 wo.numberwidth = 1
 wo.wrap = false
-wo.foldmethod = "indent"
+wo.foldmethod = "syntax"
 wo.foldcolumn = "0"
 wo.colorcolumn = "120"
 
