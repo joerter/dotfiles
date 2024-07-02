@@ -138,4 +138,7 @@ require("lazy").setup({
 		"zbirenbaum/copilot.lua",
 	},
 	{ dir = "~/github/joerter/vimerton" },
+	{
+		"pseewald/vim-anyfold"
+	}
 })
