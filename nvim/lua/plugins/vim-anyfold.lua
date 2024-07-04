@@ -18,5 +18,5 @@ vim.api.nvim_create_autocmd('Filetype', {
 -- })
 
 -- Set fold level (uncomment one of the following lines)
-vim.opt.foldlevel = 0  -- Close all folds
---vim.opt.foldlevel = 99 -- Open all folds
+--vim.opt.foldlevel = 0  -- Close all folds
+vim.opt.foldlevel = 99 -- Open all folds
