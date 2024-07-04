@@ -32,7 +32,7 @@ map('n', '<leader>wl', '<C-w>l', options)
 map('n', '<leader>fs', ':w<CR>', options)
 
 -- buffers
-map('n', '<leader>bda', ':%bd|e#<CR>', options)
+map('n', '<leader>bda', ':%bd|e#|bd#<CR>', options)
 
 
 

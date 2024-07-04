@@ -137,4 +137,7 @@ require("lazy").setup({
 		"jaawerth/fennel.vim",
 		"zbirenbaum/copilot.lua",
 	},
+	{
+		"pseewald/vim-anyfold"
+	}
 })

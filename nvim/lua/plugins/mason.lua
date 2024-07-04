@@ -41,6 +41,14 @@ lspconfig.tailwindcss.setup({
 lspconfig.lua_ls.setup{}
 lspconfig.fennel_ls.setup({})
 
+lspconfig.terraformls.setup{}
+vim.api.nvim_create_autocmd({"BufWritePre"}, {
+  pattern = {"*.tf", "*.tfvars"},
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
+
 -- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 -- for type, icon in pairs(signs) do
 --   local hl = "DiagnosticSign" .. type
