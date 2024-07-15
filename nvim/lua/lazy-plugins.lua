@@ -51,7 +51,7 @@ require("lazy").setup({
 	},
 	{ "echasnovski/mini.nvim", version = "*" },
 	--{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
-	{ "arcticicestudio/nord-vim" },
+	{ "shaunsingh/nord.nvim" },
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
@@ -140,5 +140,14 @@ require("lazy").setup({
 	{ dir = "~/github/joerter/vimerton" },
 	{
 		"pseewald/vim-anyfold"
+	},
+	{
+		"lukas-reineke/headlines.nvim",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = true, -- or `opts = {}`
+	},
+	{
+		"ggandor/leap.nvim",
+		dependencies = "tpope/vim-repeat"
 	}
 })
