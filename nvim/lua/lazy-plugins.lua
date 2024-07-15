@@ -51,7 +51,8 @@ require("lazy").setup({
 	},
 	{ "echasnovski/mini.nvim", version = "*" },
 	--{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
-	{ "shaunsingh/nord.nvim" },
+	--{ "shaunsingh/nord.nvim" },
+	{ "nordtheme/vim" },
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
