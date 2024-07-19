@@ -149,5 +149,6 @@ require("lazy").setup({
 	{
 		"ggandor/leap.nvim",
 		dependencies = "tpope/vim-repeat"
-	}
+	},
+	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'}
 })
