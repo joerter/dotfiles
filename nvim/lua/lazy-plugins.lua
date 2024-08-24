@@ -13,6 +13,19 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
+		"tpope/vim-fugitive",
+		"nvim-treesitter/nvim-treesitter",
+		"mhartington/formatter.nvim",
+		"ledger/vim-ledger",
+		"mattn/emmet-vim",
+		"tpope/vim-surround",
+		"Olical/conjure",
+		"mfussenegger/nvim-lint",
+		"jaawerth/fennel.vim",
+		"pseewald/vim-anyfold",
+		"nordtheme/vim" 
+	},
+	{
 		"folke/trouble.nvim",
 		branch = "dev", -- IMPORTANT!
 		keys = {
@@ -50,9 +63,6 @@ require("lazy").setup({
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 	},
 	{ "echasnovski/mini.nvim", version = "*" },
-	--{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true },
-	--{ "shaunsingh/nord.nvim" },
-	{ "nordtheme/vim", "shaunsingh/solarized.nvim" },
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
@@ -78,12 +88,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"tpope/vim-fugitive",
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-	},
-	{
 		"stevearc/dressing.nvim",
 		opts = {},
 	},
@@ -100,22 +104,8 @@ require("lazy").setup({
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-vsnip",
 			"nvimdev/lspsaga.nvim",
+			"themercorp/themer.lua",
 		},
-	},
-	{
-		"mhartington/formatter.nvim",
-	},
-	{
-		"ledger/vim-ledger",
-	},
-	{
-		"mattn/emmet-vim",
-	},
-	{
-		"tpope/vim-surround",
-	},
-	{
-		"Olical/conjure",
 	},
 	{ "Olical/nfnl", ft = "fennel" },
 	{
@@ -123,10 +113,7 @@ require("lazy").setup({
 		dependencies = {
 			"guns/vim-sexp",
 		},
-		ft = {"clojure", "fennel"}
-	},
-	{
-		"mfussenegger/nvim-lint",
+		ft = { "clojure", "fennel" },
 	},
 	{
 		"j-hui/fidget.nvim",
@@ -135,20 +122,13 @@ require("lazy").setup({
 		},
 	},
 	{
-		"jaawerth/fennel.vim",
-		"zbirenbaum/copilot.lua",
-	},
-	{
-		"pseewald/vim-anyfold"
-	},
-	{
 		"lukas-reineke/headlines.nvim",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = true, -- or `opts = {}`
 	},
 	{
 		"ggandor/leap.nvim",
-		dependencies = "tpope/vim-repeat"
+		dependencies = "tpope/vim-repeat",
 	},
-	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'}
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 })
