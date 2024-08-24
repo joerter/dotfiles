@@ -15,13 +15,13 @@
 	plom = !git pull origin $(git_main_branch)
 	po = push origin
 	psup = push --set-upstream origin
-	recent = branch --sort=-committerdate
+	recent = ! git branch --sort=-committerdate --list | head -n 5
 	spl = !git stash && git pull origin && git stash pop
 	st = status
 	stats = shortlog
 [user]
 	name = John Oerter
-	email = john@johnoerter.me
+	email = joerter@dinacare.com
 [pull]
 	rebase = false
 [core]
