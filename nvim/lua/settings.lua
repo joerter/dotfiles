@@ -28,11 +28,10 @@ wo.colorcolumn = "120"
 bo.swapfile = false
 bo.syntax = "on"
 
-vim.api.nvim_set_var('shiftwidth', 4)
-vim.api.nvim_set_var('tabstop', 4)
-vim.api.nvim_set_var('softtabstop', 4)
-vim.api.nvim_set_var('expandtab', true)
-vim.api.nvim_set_var('smartindent', true)
+vim.cmd('set expandtab')
+vim.cmd('set tabstop=2')
+vim.cmd('set softtabstop=2')
+vim.cmd('set shiftwidth=2')
 -- o.tabstop = 4
 -- o.shiftwidth = 4
 -- o.softtabstop = 4
