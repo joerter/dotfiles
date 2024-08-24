@@ -23,7 +23,8 @@ require("lazy").setup({
 		"mfussenegger/nvim-lint",
 		"jaawerth/fennel.vim",
 		"pseewald/vim-anyfold",
-		"nordtheme/vim" 
+		"nordtheme/vim",
+		"brenoprata10/nvim-highlight-colors",
 	},
 	{
 		"folke/trouble.nvim",
@@ -104,7 +105,6 @@ require("lazy").setup({
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-vsnip",
 			"nvimdev/lspsaga.nvim",
-			"themercorp/themer.lua",
 		},
 	},
 	{ "Olical/nfnl", ft = "fennel" },
