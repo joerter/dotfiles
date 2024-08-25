@@ -1,7 +1,12 @@
-local map = vim.api.nvim_set_keymap
-options = { noremap = true }
+return {
+	"akinsho/bufferline.nvim",
+	version = "*",
+	dependencies = "nvim-tree/nvim-web-devicons",
+	opts = {},
+	config = function()
+		local map = vim.api.nvim_set_keymap
+		options = { noremap = true }
 
-require("bufferline").setup{}
-
-map('n', '<leader>bp', ':BufferLinePick<cr>', options)
-
+		map("n", "<leader>bp", ":BufferLinePick<cr>", options)
+	end,
+}

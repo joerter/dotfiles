@@ -1,4 +1,3 @@
--- Ensure termguicolors is enabled if not already
-vim.opt.termguicolors = true
-
-require('nvim-highlight-colors').setup({})
+return {
+    "brenoprata10/nvim-highlight-colors",
+}
