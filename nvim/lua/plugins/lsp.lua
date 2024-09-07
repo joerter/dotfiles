@@ -62,10 +62,15 @@ return {
 			lspconfig.fennel_ls.setup({
 				capabilities = capabilities,
 			})
-
 			lspconfig.terraformls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.intelephense.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.dockerls.setup({ capabilities = capabilities })
+			lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
+
 			vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 				pattern = { "*.tf", "*.tfvars" },
 				callback = function()
@@ -77,12 +82,13 @@ return {
 
 			vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
 
 			--map("n", "<leader>ca", ":Lspsaga code_action<CR>", options)
 			--map("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", options)
 			map("n", "<leader>cl", ":Lspsaga show_line_diagnostics<CR>", options)
 			map("n", "<leader>cb", ":Lspsaga show_buf_diagnostics<CR>", options)
-			map("n", "<leader>cr", ":Lspsaga rename<CR>", options)
+			--map("n", "<leader>cr", ":Lspsaga rename<CR>", options)
 			map("n", "<leader>cs", ":Lspsaga signature_help<CR>", options)
 			map("n", "<leader>cp", ":Lspsaga peek_definition<CR>", options)
 		end,
