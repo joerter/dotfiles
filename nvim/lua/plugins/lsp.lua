@@ -8,7 +8,7 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = { "clojure_lsp", "tsserver", "tailwindcss", "lua_ls" },
+			ensure_installed = { "clojure_lsp", "ts_ls", "tailwindcss", "lua_ls" },
 		},
 	},
 	{
@@ -28,7 +28,7 @@ return {
 				}
 				vim.lsp.buf.execute_command(params)
 			end
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 				handlers = {
 					["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -77,12 +77,13 @@ return {
 
 			vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
 
 			--map("n", "<leader>ca", ":Lspsaga code_action<CR>", options)
 			--map("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", options)
 			map("n", "<leader>cl", ":Lspsaga show_line_diagnostics<CR>", options)
 			map("n", "<leader>cb", ":Lspsaga show_buf_diagnostics<CR>", options)
-			map("n", "<leader>cr", ":Lspsaga rename<CR>", options)
+			--map("n", "<leader>cr", ":Lspsaga rename<CR>", options)
 			map("n", "<leader>cs", ":Lspsaga signature_help<CR>", options)
 			map("n", "<leader>cp", ":Lspsaga peek_definition<CR>", options)
 		end,
