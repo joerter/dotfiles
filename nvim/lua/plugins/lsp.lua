@@ -8,7 +8,7 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = { "clojure_lsp", "tsserver", "tailwindcss", "lua_ls" },
+			ensure_installed = { "clojure_lsp", "ts_ls", "tailwindcss", "lua_ls" },
 		},
 	},
 	{
