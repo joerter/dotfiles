@@ -82,6 +82,9 @@ map('n', '<leader>bda', ':%bd|e#|bd#<CR>', options)
 map('v', '<F9>', ':\'<,\'>sort u<CR>', options)
 map('n', '<leader><cr>', ':nohlsearch<CR>', options)
 
+-- misc
+map('n', '*', '*N', options)
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
