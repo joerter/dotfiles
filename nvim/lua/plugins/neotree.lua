@@ -28,7 +28,7 @@ return {
       },
     })
 
-    map("n", "<leader>ft", ":Neotree toggle<CR>", options)
+    map("n", "<leader>ft", ":Neotree show filesystem left toggle<CR>", options)
     map("n", "<leader>ff", ":Neotree reveal<CR>", options)
   end,
 }
