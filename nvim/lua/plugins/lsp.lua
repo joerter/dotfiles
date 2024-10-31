@@ -42,7 +42,7 @@ return {
             ts_organize_imports,
             { desc = "Organize Imports" }
           )
-          vim.keymap.set("n", "<leader>ft", ts_organize_imports, {})
+          vim.keymap.set("n", "<leader>fi", ts_organize_imports, {})
         end,
       })
 
