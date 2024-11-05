@@ -8,14 +8,29 @@
 --   end,
 -- }
 
+-- return {
+--   "folke/tokyonight.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   opts = {
+--     on_highlights = function(highlights, colors)
+--       highlights.LineNr = { fg = "#ff9e64" } -- Using a specific hex color
+--     end
+--   },
+--   config = function() vim.cmd [[colorscheme tokyonight-moon]] end,
+-- }
 return {
   "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
-  opts = {},
-  config = function() vim.cmd [[colorscheme tokyonight-moon]] end,
-  on_highlights = function(highlights, colors)
-    highlights.LineNr = { fg = colors.orange }
+  config = function()
+    require("tokyonight").setup({
+      style = "moon",
+      on_colors = function(colors)
+        colors.fg_gutter = "#ff9e64"
+      end
+    })
+    vim.cmd [[colorscheme tokyonight-moon]]
   end
 }
 
