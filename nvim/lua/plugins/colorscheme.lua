@@ -26,8 +26,13 @@ return {
   config = function()
     require("tokyonight").setup({
       style = "moon",
-      on_colors = function(colors)
-        colors.fg_gutter = "#ff9e64"
+      -- on_colors = function(colors)
+      --   colors.fg_gutter = "#ff9e64"
+      -- end
+      on_highlights = function(highlights, colors)
+        highlights.LineNr = { fg = colors.magenta }
+        highlights.LineNrAbove = { fg = colors.magenta }
+        highlights.LineNrBelow = { fg = colors.magenta }
       end
     })
     vim.cmd [[colorscheme tokyonight-moon]]
