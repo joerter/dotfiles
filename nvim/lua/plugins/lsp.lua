@@ -105,6 +105,8 @@ return {
       vim.keymap.set("n", "<leader>cs", vim.lsp.buf.signature_help, {})
       vim.keymap.set("n", "<leader>cl", function() vim.diagnostic.open_float({ scope = "line" }) end, {})
       vim.keymap.set("n", "<leader>cb", function() vim.diagnostic.open_float({ scope = "buffer" }) end, {})
+      vim.keymap.set('n', '<leader>cgn', vim.diagnostic.goto_next)
+      vim.keymap.set('n', '<leader>cgp', vim.diagnostic.goto_prev)
 
       --map("n", "<leader>ca", ":Lspsaga code_action<CR>", options)
       --map("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", options)
