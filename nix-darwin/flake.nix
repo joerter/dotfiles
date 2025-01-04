@@ -24,7 +24,6 @@
           pkgs.docker
           pkgs.fzf
           pkgs.git 
-          pkgs.kitty 
           pkgs.lazydocker
           pkgs.lazygit
           pkgs.mkalias
@@ -34,10 +33,12 @@
           pkgs.obsidian
           pkgs.raycast
           pkgs.ripgrep
-          pkgs.rectangle
+          pkgs.tableplus
           pkgs.terraform
           pkgs.tmux
+          pkgs.vscode
           pkgs.xz
+          pkgs.zoom-us
         ];
 
       homebrew = {
@@ -46,6 +47,7 @@
           "mas"
         ];
         casks = [
+          "ghostty"
         ];
         # masApps = {
         #     "Yoink" = ""
