@@ -26,6 +26,7 @@
           pkgs.git 
           pkgs.lazydocker
           pkgs.lazygit
+          pkgs.hledger
           pkgs.mkalias
           pkgs.mkcert
           pkgs.neovim
