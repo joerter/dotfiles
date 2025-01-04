@@ -76,27 +76,27 @@ plugins=(
   docker
   git
   node
-  nvm
+  #nvm
   themes
   zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
 
-export NVM_DIR=~/.nvm
+# export NVM_DIR=~/.nvm
 
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # bun completions
-[ -s "/Users/joerter/.bun/_bun" ] && source "/Users/joerter/.bun/_bun"
+# [ -s "/Users/joerter/.bun/_bun" ] && source "/Users/joerter/.bun/_bun"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/joerter/Library/Application Support/Herd/config/php/83/"
+#export HERD_PHP_83_INI_SCAN_DIR="/Users/joerter/Library/Application Support/Herd/config/php/83/"
 
 # Herd injected PHP binary.
-export PATH="/Users/joerter/Library/Application Support/Herd/bin/":$PATH
+#export PATH="/Users/joerter/Library/Application Support/Herd/bin/":$PATH
