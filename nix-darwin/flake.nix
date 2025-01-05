@@ -18,10 +18,8 @@
 # $ nix-env -qaP | grep wget
       environment.systemPackages = 
         [
-#pkgs._1password-gui
         pkgs.arc-browser
           pkgs.direnv
-          pkgs.docker
           pkgs.fzf
           pkgs.git 
           pkgs.lazydocker
@@ -30,7 +28,6 @@
           pkgs.mkalias
           pkgs.mkcert
           pkgs.neovim
-          pkgs.nodejs_23
           pkgs.obsidian
           pkgs.raycast
           pkgs.ripgrep
@@ -58,13 +55,9 @@
       };
 
       fonts.packages = [
-        (pkgs.nerdfonts.override { fonts = [ "SauceCodePro" ]; })
+        pkgs.nerd-fonts._0xproto
+          pkgs.nerd-fonts.droid-sans-mono
       ];
-# fonts.packages = [
-#      ...
-#      pkgs.nerd-fonts._0xproto
-#      pkgs.nerd-fonts.droid-sans-mono
-# ]
 
 # fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
@@ -102,7 +95,6 @@
         ".GlobalPreferences"."com.apple.mouse.scaling" = 9.0;
         NSGlobalDomain.AppleInterfaceStyle = "Dark";
         NSGlobalDomain.KeyRepeat = 7;
-        NSGlobalDomain."com.apple.keyboardlayout.all" = ["com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese"];
         controlcenter.BatteryShowPercentage = true;
         controlcenter.Bluetooth = true;
         controlcenter.Sound = true;
@@ -119,8 +111,6 @@
         hitoolbox.AppleFnUsageType = "Show Emoji & Symbols";
         loginwindow.GuestEnabled = false;
         menuExtraClock.ShowSeconds = true;
-        universalaccess.reduceMotion = true;
-
 
         finder.FXPreferredViewStyle = "clmv";
       };
@@ -128,7 +118,7 @@
       system.keyboard = {
         enableKeyMapping = true;
         remapCapsLockToEscape = true;  # Optional, if you want this
-        userKeyMapping = [];  # Add any custom key mappings here
+          userKeyMapping = [];  # Add any custom key mappings here
       };
 
 # Used for backwards compatibility, please read the changelog before changing.
