@@ -1,1 +1,0 @@
-/Users/joerter/github/joerter/dotfiles/.zshrc

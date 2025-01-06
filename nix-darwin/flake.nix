@@ -18,53 +18,48 @@
 # $ nix-env -qaP | grep wget
       environment.systemPackages = 
         [
-          #pkgs._1password-gui
-          pkgs.arc-browser
+        pkgs.arc-browser
           pkgs.direnv
-          pkgs.docker
           pkgs.fzf
           pkgs.git 
-          pkgs.kitty 
           pkgs.lazydocker
           pkgs.lazygit
+          pkgs.hledger
           pkgs.mkalias
           pkgs.mkcert
           pkgs.neovim
-          pkgs.nodejs_23
           pkgs.obsidian
           pkgs.raycast
           pkgs.ripgrep
-          pkgs.rectangle
+          pkgs.tableplus
           pkgs.terraform
           pkgs.tmux
+          pkgs.vscode
           pkgs.xz
-        ];
+          pkgs.zoom-us
+          ];
 
       homebrew = {
         enable = true;
         brews = [
-          "mas"
         ];
         casks = [
+          "ghostty"
         ];
-        # masApps = {
-        #     "Yoink" = ""
-        #   }
+# masApps = {
+#     "Yoink" = ""
+#   }
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
       };
 
-      # fonts.packages = [
-      #   (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      # ];
-      # fonts.packages = [
-      #      ...
-      #      pkgs.nerd-fonts._0xproto
-      #      pkgs.nerd-fonts.droid-sans-mono
-      # ]
+      fonts.packages = [
+        pkgs.nerd-fonts._0xproto
+          pkgs.nerd-fonts.droid-sans-mono
+      ];
 
-      # fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+# fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
 
 # Necessary for using flakes on this system.
@@ -97,32 +92,34 @@
             '';
 
       system.defaults = {
-         ".GlobalPreferences"."com.apple.mouse.scaling" = 9.0;
-         NSGlobalDomain.AppleInterfaceStyle = "Dark";
-         NSGlobalDomain.KeyRepeat = 7;
-         controlcenter.BatteryShowPercentage = true;
-         controlcenter.Bluetooth = true;
-         controlcenter.Sound = true;
-         dock.autohide = true;
-         dock.appswitcher-all-displays = true;
-         dock.launchanim = false;
-         dock.persistent-others = ["~/github/joerter" "~/Downloads" "~/Screenshots"];
-         dock.showhidden = true;
-         dock.static-only = true;
-         finder.AppleShowAllFiles = true;
-         finder.CreateDesktop = false;
-         finder.ShowPathbar = true;
-         finder.ShowStatusBar = true;
-         hitoolbox.AppleFnUsageType = "Show Emoji & Symbols";
-         loginwindow.GuestEnabled = false;
-         menuExtraClock.ShowSeconds = true;
-         universalaccess.reduceMotion = true;
-         
+        ".GlobalPreferences"."com.apple.mouse.scaling" = 9.0;
+        NSGlobalDomain.AppleInterfaceStyle = "Dark";
+        NSGlobalDomain.KeyRepeat = 7;
+        controlcenter.BatteryShowPercentage = true;
+        controlcenter.Bluetooth = true;
+        controlcenter.Sound = true;
+        dock.autohide = true;
+        dock.appswitcher-all-displays = true;
+        dock.launchanim = false;
+        dock.persistent-others = ["~/github/joerter" "~/Downloads" "~/Screenshots"];
+        dock.showhidden = true;
+        dock.static-only = true;
+        finder.AppleShowAllFiles = true;
+        finder.CreateDesktop = false;
+        finder.ShowPathbar = true;
+        finder.ShowStatusBar = true;
+        hitoolbox.AppleFnUsageType = "Show Emoji & Symbols";
+        loginwindow.GuestEnabled = false;
+        menuExtraClock.ShowSeconds = true;
 
-         finder.FXPreferredViewStyle = "clmv";
-        };
+        finder.FXPreferredViewStyle = "clmv";
+      };
 
-        system.keyboard.remapCapsLockToControl = true;
+      system.keyboard = {
+        enableKeyMapping = true;
+        remapCapsLockToEscape = true;  # Optional, if you want this
+          userKeyMapping = [];  # Add any custom key mappings here
+      };
 
 # Used for backwards compatibility, please read the changelog before changing.
 # $ darwin-rebuild changelog
@@ -148,6 +145,6 @@
         }];
     };
 
-    darwinPackages = self.darwinConfigurations."twilight".pkgs;
+    darwinPackages = self.darwinConfigurations."maverick".pkgs;
   };
 }
