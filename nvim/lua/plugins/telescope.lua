@@ -39,7 +39,7 @@ return {
 			map("n", "<leader>tk", "<cmd>Telescope keymaps<cr>", options)
 			map("n", "<leader>tm", "<cmd>Telescope marks<cr>", options)
 			map("n", "<leader>tr", "<cmd>Telescope registers<cr>", options)
-			map("n", "<leader>tt", "<cmd>Telescope tags<cr>", options)
+			--map("n", "<leader>tt", "<cmd>Telescope tags<cr>", options)
 		end,
 	},
 	{

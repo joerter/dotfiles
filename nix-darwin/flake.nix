@@ -31,6 +31,7 @@
           pkgs.obsidian
           pkgs.raycast
           pkgs.ripgrep
+          pkgs.spotify
           pkgs.tableplus
           pkgs.terraform
           pkgs.tmux
@@ -42,6 +43,7 @@
       homebrew = {
         enable = true;
         brews = [
+          "fswatch"
         ];
         casks = [
           "ghostty"
