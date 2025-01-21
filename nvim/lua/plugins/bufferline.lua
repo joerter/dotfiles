@@ -1,18 +1,73 @@
 return {
-	"akinsho/bufferline.nvim",
-	version = "*",
-	dependencies = "nvim-tree/nvim-web-devicons",
-	opts = {},
-	config = function()
-    require('bufferline').setup({})
-		local map = vim.api.nvim_set_keymap
-		options = { noremap = true }
+  "akinsho/bufferline.nvim",
+  version = "*",
+  dependencies = "nvim-tree/nvim-web-devicons",
+  opts = {},
+  config = function()
+    require('bufferline').setup({
+      options = {
+        groups = {
+          options = {
+            toggle_hidden_on_enter = true -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
+          },
+          items = {
+            {
+              name = "Tests",                 -- Laravel Tests
+              highlight = { sp = "#bb9af7" }, -- Purple from Tokyo Night
+              priority = 1,
+              icon = "󰙨 ",
+              matcher = function(buf)
+                return buf.path:match('/tests/') or buf.path:match('Test.php$')
+              end,
+            },
+            {
+              name = "Models",
+              highlight = { sp = "#ff9e64" }, -- Orange
+              priority = 2,
+              icon = "󰆧 ",
+              matcher = function(buf)
+                return buf.path:match('/Models/') and buf.path:match('%.php$')
+              end,
+            },
+            {
+              name = "Controllers",           -- Laravel Controllers
+              highlight = { sp = "#7dcfff" }, -- Light blue from Tokyo Night
+              priority = 3,
+              icon = "󰡰 ",
+              matcher = function(buf)
+                return buf.path:match('/Controllers/') or buf.path:match('Controller.php$')
+              end,
+            },
+            {
+              name = "Services",
+              highlight = { sp = "#f7768e" }, -- Red
+              priority = 4,
+              icon = "󰚇 ",
+              matcher = function(buf)
+                return buf.path:match('/Services/') or buf.path:match('Service.php$')
+              end,
+            },
+            {
+              name = "React",
+              highlight = { sp = "#9ece6a" }, -- Green from Tokyo Night
+              priority = 5,
+              icon = "󰜈 ",
+              matcher = function(buf)
+                return buf.path:match('%.jsx$') or buf.path:match('%.tsx$') or buf.path:match('/components/')
+              end,
+            },
+          }
+        }
+      }
 
-		map("n", "<leader>bp", ":BufferLinePick<cr>", options)
-		map("n", "<leader>bco", ":BufferLineCloseOthers<cr>", options)
-		map("n", "<leader>bcl", ":BufferLineCloseLeft<cr>", options)
-		map("n", "<leader>bcr", ":BufferLineCloseRight<cr>", options)
-		map("n", "<leader>bo", ":BufferLineSortByDirectory<cr>", options)
+    })
+    local map = vim.api.nvim_set_keymap
+    options = { noremap = true }
 
-	end,
+    map("n", "<leader>bp", ":BufferLinePick<cr>", options)
+    map("n", "<leader>bco", ":BufferLineCloseOthers<cr>", options)
+    map("n", "<leader>bcl", ":BufferLineCloseLeft<cr>", options)
+    map("n", "<leader>bcr", ":BufferLineCloseRight<cr>", options)
+    map("n", "<leader>bo", ":BufferLineSortByDirectory<cr>", options)
+  end,
 }
