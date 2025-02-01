@@ -7,18 +7,6 @@
 --     vim.cmd([[colorscheme nord]])
 --   end,
 -- }
-
--- return {
---   "folke/tokyonight.nvim",
---   lazy = false,
---   priority = 1000,
---   opts = {
---     on_highlights = function(highlights, colors)
---       highlights.LineNr = { fg = "#ff9e64" } -- Using a specific hex color
---     end
---   },
---   config = function() vim.cmd [[colorscheme tokyonight-moon]] end,
--- }
 return {
   "folke/tokyonight.nvim",
   lazy = false,
