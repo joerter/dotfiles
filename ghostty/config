@@ -1,3 +1,4 @@
 font-family = "0xProto Nerd Font Mono"
-font-size = 15
+font-size = 11
 theme = tokyonight_moon
+keybind = shift+enter=text:\n
