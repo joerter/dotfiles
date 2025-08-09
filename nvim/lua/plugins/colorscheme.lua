@@ -21,6 +21,8 @@ return {
         highlights.LineNr = { fg = colors.magenta }
         highlights.LineNrAbove = { fg = colors.magenta }
         highlights.LineNrBelow = { fg = colors.magenta }
+
+        highlights.MsgArea = { bg = colors.bg_dark, fg = colors.green, bold = true } -- Command line area
       end
     })
     vim.cmd [[colorscheme tokyonight-moon]]
