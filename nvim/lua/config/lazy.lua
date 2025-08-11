@@ -78,6 +78,7 @@ map('n', '<leader>fs', ':w<CR>', options)
 
 map('v', '<leader>ls', ':\'<,\'>sort u<CR>', options)
 map('n', '<leader><cr>', ':nohlsearch<CR>', options)
+map('n', '<leader>fp', ':let @+ = expand("%:p")<CR>', options)
 
 -- misc
 map('n', '*', '*N', options)

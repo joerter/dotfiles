@@ -30,9 +30,18 @@ return {
               end,
             },
             {
+              name = "Requests",
+              highlight = { sp = "#f7768e" }, -- Red
+              priority = 3,
+              icon = "󰚇 ",
+              matcher = function(buf)
+                return buf.path:match('/Requests/') or buf.path:match('Request.php$')
+              end,
+            },
+            {
               name = "Controllers",           -- Laravel Controllers
               highlight = { sp = "#7dcfff" }, -- Light blue from Tokyo Night
-              priority = 3,
+              priority = 4,
               icon = "󰡰 ",
               matcher = function(buf)
                 return buf.path:match('/Controllers/') or buf.path:match('Controller.php$')
@@ -41,16 +50,25 @@ return {
             {
               name = "Services",
               highlight = { sp = "#f7768e" }, -- Red
-              priority = 4,
+              priority = 5,
               icon = "󰚇 ",
               matcher = function(buf)
                 return buf.path:match('/Services/') or buf.path:match('Service.php$')
               end,
             },
             {
+              name = "Actions",
+              highlight = { sp = "#f7768e" }, -- Red
+              priority = 5,
+              icon = "󰚇 ",
+              matcher = function(buf)
+                return buf.path:match('/Actions/')
+              end,
+            },
+            {
               name = "React",
               highlight = { sp = "#9ece6a" }, -- Green from Tokyo Night
-              priority = 5,
+              priority = 6,
               icon = "󰜈 ",
               matcher = function(buf)
                 return buf.path:match('%.jsx$') or buf.path:match('%.tsx$') or buf.path:match('/components/')
