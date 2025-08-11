@@ -10,6 +10,7 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
+        null_ls.builtins.diagnostics.terraform_validate,
         require("none-ls.formatting.jq"),
 				--require("none-ls.diagnostics.eslint"),
         require("none-ls-php.diagnostics.php"),
