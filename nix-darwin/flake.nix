@@ -43,8 +43,8 @@
       homebrew = {
         enable = true;
         brews = [
-          "fswatch",
-          "qmk/qmk/qmk",
+          "fswatch"
+          "qmk/qmk/qmk"
         ];
         casks = [
           "ghostty"
