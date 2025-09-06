@@ -7,20 +7,20 @@ return {
     -- Credit: glepnir
     local lualine = require('lualine')
 
-    -- Color table for highlights
+    -- Color table for highlights - Tokyo Night Moon theme
     -- stylua: ignore
     local colors = {
-      bg       = '#202328',
-      fg       = '#bbc2cf',
-      yellow   = '#ECBE7B',
-      cyan     = '#008080',
-      darkblue = '#081633',
-      green    = '#98be65',
-      orange   = '#FF8800',
-      violet   = '#a9a1e1',
-      magenta  = '#c678dd',
-      blue     = '#51afef',
-      red      = '#ec5f67',
+      bg       = '#222436',
+      fg       = '#c8d3f5',
+      yellow   = '#ffc777',
+      cyan     = '#86e1fc',
+      darkblue = '#1e2030',
+      green    = '#c3e88d',
+      orange   = '#ff966c',
+      violet   = '#c099ff',
+      magenta  = '#c099ff',
+      blue     = '#82aaff',
+      red      = '#ff757f',
     }
 
     local conditions = {
