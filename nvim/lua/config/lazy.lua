@@ -76,7 +76,7 @@ map('n', '<leader>wl', '<C-w>l', options)
 -- files
 map('n', '<leader>fs', ':w<CR>', options)
 
-map('v', '<F9>', ':\'<,\'>sort u<CR>', options)
+map('v', '<leader>ls', ':\'<,\'>sort u<CR>', options)
 map('n', '<leader><cr>', ':nohlsearch<CR>', options)
 map('n', '<leader>fp', ':let @+ = expand("%:p")<CR>', options)
 
