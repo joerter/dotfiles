@@ -21,7 +21,7 @@
 	stats = shortlog
 [user]
 	name = John Oerter
-	email = joerter@dinacare.com
+	email = john@johnoerter.me
 [pull]
 	rebase = false
 [core]
