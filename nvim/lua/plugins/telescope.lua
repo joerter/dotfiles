@@ -20,11 +20,24 @@ return {
 						},
 					},
 				},
+				pickers = {
+					buffers = {
+						mappings = {
+							i = {
+								["<Tab>"] = actions.move_selection_next,
+							},
+							n = {
+								["<Tab>"] = actions.move_selection_next,
+							},
+						},
+					},
+				},
 			})
 
 			map("n", "<leader>pf", "<cmd>Telescope find_files<cr>", options)
 			map("n", "<leader>fq", "<cmd>Telescope quickfix<cr>", options)
 			map("n", "<leader>bb", "<cmd>Telescope buffers<cr>", options)
+			map("n", "<leader><Tab>", "<cmd>Telescope buffers sort_mru=true<cr>", options)
 
 			map("n", "<leader>cf", "<cmd>Telescope lsp_references<cr>", options)
 			map("n", "<leader>cic", "<cmd>Telescope lsp_incoming_calls<cr>", options)
