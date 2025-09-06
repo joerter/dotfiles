@@ -37,6 +37,33 @@ return {
       end,
     }
 
+    -- Tokyo-inspired helper functions
+    local function get_time_icon()
+      local hour = tonumber(os.date('%H'))
+      if hour >= 5 and hour < 10 then
+        return '☕' -- Day sun
+      elseif hour >= 10 and hour < 12 then
+        return '🌞' -- Day sun
+      elseif hour >= 12 and hour < 5 then
+        return '💻' -- Day sun
+      elseif hour >= 18 and hour < 22 then
+        return '🌆' -- Evening
+      else
+        return '🌃' -- Night moon (your kanji idea!)
+      end
+    end
+
+    local function tokyo_greeting()
+      local hour = tonumber(os.date('%H'))
+      if hour >= 5 and hour < 12 then
+        return 'おはよう' -- Good morning
+      elseif hour >= 12 and hour < 18 then
+        return 'こんにちは' -- Good afternoon
+      else
+        return 'こんばんは' -- Good evening
+      end
+    end
+
     -- Config
     local config = {
       options = {
@@ -82,18 +109,50 @@ return {
       table.insert(config.sections.lualine_x, component)
     end
 
+    -- Tokyo-inspired left border with time-based icon
     ins_left {
       function()
-        return '▊'
+        return get_time_icon()
       end,
-      color = { fg = colors.blue },  -- Sets highlighting of component
-      padding = { left = 0, right = 1 }, -- We don't need space before this
+      color = function()
+        local hour = tonumber(os.date('%H'))
+        if hour >= 6 and hour < 18 then
+          return { fg = colors.yellow } -- Day
+        elseif hour >= 18 and hour < 22 then
+          return { fg = colors.orange } -- Evening
+        else
+          return { fg = colors.blue }   -- Night
+        end
+      end,
+      padding = { left = 0, right = 1 },
     }
 
     ins_left {
-      -- mode component
+      -- mode component with Japanese mode indicators
       function()
-        return ''
+        local mode_map = {
+          n = 'ノーマル🥷', -- Normal
+          i = 'インサート🍜', -- Insert
+          v = 'ビジュアル🏮', -- Visual
+          [''] = 'ビジュアル', -- Visual block
+          V = 'ビジュアル', -- Visual line
+          c = 'コマンド', -- Command
+          no = 'ノーマル',
+          s = 'セレクト', -- Select
+          S = 'セレクト',
+          [''] = 'セレクト',
+          ic = 'インサート',
+          R = 'リプレース', -- Replace
+          Rv = 'リプレース',
+          cv = 'コマンド',
+          ce = 'コマンド',
+          r = '確認', -- Confirm (keeping kanji as it's more of a status)
+          rm = '確認',
+          ['r?'] = '確認',
+          ['!'] = 'シェル', -- Shell
+          t = 'ターミナル', -- Terminal
+        }
+        return mode_map[vim.fn.mode()] or ''
       end,
       color = function()
         -- auto change color according to neovims mode
@@ -101,13 +160,13 @@ return {
           n = colors.red,
           i = colors.green,
           v = colors.blue,
-          [''] = colors.blue,
+          [''] = colors.blue,
           V = colors.blue,
           c = colors.magenta,
           no = colors.red,
           s = colors.orange,
           S = colors.orange,
-          [''] = colors.orange,
+          [''] = colors.orange,
           ic = colors.yellow,
           R = colors.violet,
           Rv = colors.violet,
@@ -143,7 +202,7 @@ return {
     ins_left {
       'diagnostics',
       sources = { 'nvim_diagnostic' },
-      symbols = { error = ' ', warn = ' ', info = ' ' },
+      symbols = { error = '🔴 ', warn = '🟡 ', info = '🔵 ' }, -- Japanese-style circle indicators
       diagnostics_color = {
         error = { fg = colors.red },
         warn = { fg = colors.yellow },
@@ -160,9 +219,9 @@ return {
     }
 
     ins_left {
-      -- Lsp server name .
+      -- Lsp server name with Japanese prefix
       function()
-        local msg = 'No Active Lsp'
+        local msg = 'LSP無し' -- No LSP (LSP nashi)
         local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
         local clients = vim.lsp.get_clients()
         if next(clients) == nil then
@@ -171,19 +230,19 @@ return {
         for _, client in ipairs(clients) do
           local filetypes = client.config.filetypes
           if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-            return client.name
+            return '言語: ' .. client.name -- Language: (gengo:)
           end
         end
         return msg
       end,
-      icon = ' LSP:',
+      icon = '🗼', -- Japanese lantern
       color = { fg = '#ffffff', gui = 'bold' },
     }
 
     -- Add components to right sections
     ins_right {
-      'o:encoding',   -- option component same as &encoding in viml
-      fmt = string.upper, -- I'm not sure why it's upper case either ;)
+      'o:encoding',
+      fmt = string.upper,
       cond = conditions.hide_in_width,
       color = { fg = colors.green, gui = 'bold' },
     }
@@ -191,20 +250,19 @@ return {
     ins_right {
       'fileformat',
       fmt = string.upper,
-      icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+      icons_enabled = false,
       color = { fg = colors.green, gui = 'bold' },
     }
 
     ins_right {
       'branch',
-      icon = '',
+      icon = '🌸', -- Cherry blossom for git branch
       color = { fg = colors.violet, gui = 'bold' },
     }
 
     ins_right {
       'diff',
-      -- Is it me or the symbol for modified us really weird
-      symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+      symbols = { added = '➕ ', modified = '📝 ', removed = '➖ ' },
       diff_color = {
         added = { fg = colors.green },
         modified = { fg = colors.orange },
@@ -213,16 +271,34 @@ return {
       cond = conditions.hide_in_width,
     }
 
+    -- Optional: Time-based greeting
     ins_right {
       function()
-        return '▊'
+        return tokyo_greeting()
       end,
-      color = { fg = colors.blue },
+      color = { fg = colors.cyan, gui = 'bold' },
+      cond = function() return vim.fn.winwidth(0) > 120 end, -- Only show on wide screens
+    }
+
+    -- Tokyo-inspired right border (matching left)
+    ins_right {
+      function()
+        return get_time_icon()
+      end,
+      color = function()
+        local hour = tonumber(os.date('%H'))
+        if hour >= 6 and hour < 18 then
+          return { fg = colors.yellow }
+        elseif hour >= 18 and hour < 22 then
+          return { fg = colors.orange }
+        else
+          return { fg = colors.blue }
+        end
+      end,
       padding = { left = 1 },
     }
 
     -- Now don't forget to initialize lualine
     lualine.setup(config)
-    require("lualine").setup(config)
   end,
 }

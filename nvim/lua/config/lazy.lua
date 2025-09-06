@@ -21,7 +21,7 @@ local wo = vim.wo
 local bo = vim.bo
 
 o.termguicolors = true
-o.laststatus = 2
+o.laststatus = 3
 o.scrolloff = 10
 o.sidescroll = 1
 o.showmatch = true
