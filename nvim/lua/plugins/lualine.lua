@@ -44,9 +44,9 @@ return {
         return '☕' -- Day sun
       elseif hour >= 10 and hour < 12 then
         return '🌞' -- Day sun
-      elseif hour >= 12 and hour < 5 then
+      elseif hour >= 12 and hour < 17 then
         return '💻' -- Day sun
-      elseif hour >= 18 and hour < 22 then
+      elseif hour >= 17 and hour < 21 then
         return '🌆' -- Evening
       else
         return '🌃' -- Night moon (your kanji idea!)
@@ -70,6 +70,7 @@ return {
         -- Disable sections and component separators
         component_separators = '',
         section_separators = '',
+        globalstatus = true, -- Use global statusline for all windows
         theme = {
           -- We are going to use lualine_c an lualine_x as left and
           -- right section. Both are highlighted by c theme .  So we
@@ -131,9 +132,9 @@ return {
       -- mode component with Japanese mode indicators
       function()
         local mode_map = {
-          n = 'ノーマル🥷', -- Normal
-          i = 'インサート🍜', -- Insert
-          v = 'ビジュアル🏮', -- Visual
+          n = 'ノーマル', -- Normal
+          i = 'インサート', -- Insert
+          v = 'ビジュアル', -- Visual
           [''] = 'ビジュアル', -- Visual block
           V = 'ビジュアル', -- Visual line
           c = 'コマンド', -- Command
@@ -218,25 +219,22 @@ return {
       end,
     }
 
+    -- Tokyo Fun Zone: Yamanote Line Station Cycling
     ins_left {
-      -- Lsp server name with Japanese prefix
       function()
-        local msg = 'LSP無し' -- No LSP (LSP nashi)
-        local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
-        local clients = vim.lsp.get_clients()
-        if next(clients) == nil then
-          return msg
-        end
-        for _, client in ipairs(clients) do
-          local filetypes = client.config.filetypes
-          if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-            return ' ' .. client.name -- Language: (gengo:)
-          end
-        end
-        return msg
+        local yamanote_stations = {
+          '東京', '有楽町', '新橋', '浜松町', '田町', '品川', '大崎', '五反田',
+          '目黒', '恵比寿', '渋谷', '原宿', '代々木', '新宿', '新大久保', '高田馬場',
+          '目白', '池袋', '大塚', '巣鴨', '駒込', '田端', '西日暮里', '日暮里',
+          '鶯谷', '上野', '御徒町', '秋葉原', '神田'
+        }
+
+        -- Cycle through stations every 3 seconds
+        local current_time = os.time()
+        local station_index = (math.floor(current_time / 3) % #yamanote_stations) + 1
+        return '🚃 ' .. yamanote_stations[station_index] .. '駅'
       end,
-      icon = '🗼', -- Japanese lantern
-      color = { fg = '#ffffff', gui = 'bold' },
+      color = { fg = colors.green, gui = 'bold' },
     }
 
     -- Add components to right sections
