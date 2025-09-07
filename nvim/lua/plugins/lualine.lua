@@ -230,7 +230,7 @@ return {
         for _, client in ipairs(clients) do
           local filetypes = client.config.filetypes
           if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-            return '言語: ' .. client.name -- Language: (gengo:)
+            return ' ' .. client.name -- Language: (gengo:)
           end
         end
         return msg
