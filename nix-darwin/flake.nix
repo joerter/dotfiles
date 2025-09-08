@@ -43,6 +43,7 @@
         brews = [
           "fswatch"
           "qmk/qmk/qmk"
+          "stripe/stripe-cli/stripe"
         ];
         casks = [
           "ghostty"
