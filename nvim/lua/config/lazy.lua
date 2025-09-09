@@ -84,7 +84,7 @@ map('n', '<leader>fp', ':let @+ = expand("%:p")<CR>', options)
 map('n', '*', '*N', options)
 
 -- buffers
-map('n', '<leader>bco', ':%bd|e#|bd#<CR>', options)
+map('n', '<leader>bco', 'mb:%bd|e#|bd#<CR>`b', options)
 
 -- Setup lazy.nvim
 require("lazy").setup({
