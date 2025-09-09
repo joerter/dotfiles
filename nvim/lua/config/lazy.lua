@@ -21,7 +21,7 @@ local wo = vim.wo
 local bo = vim.bo
 
 o.termguicolors = true
-o.laststatus = 2
+o.laststatus = 3
 o.scrolloff = 10
 o.sidescroll = 1
 o.showmatch = true
@@ -82,6 +82,9 @@ map('n', '<leader>fp', ':let @+ = expand("%:p")<CR>', options)
 
 -- misc
 map('n', '*', '*N', options)
+
+-- buffers
+map('n', '<leader>bco', ':%bd|e#|bd#<CR>', options)
 
 -- Setup lazy.nvim
 require("lazy").setup({

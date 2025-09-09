@@ -18,7 +18,6 @@
 # $ nix-env -qaP | grep wget
       environment.systemPackages = 
         [
-        pkgs.arc-browser
           pkgs.direnv
           pkgs.fzf
           pkgs.git 
@@ -33,7 +32,6 @@
           pkgs.ripgrep
           pkgs.spotify
           pkgs.tableplus
-          pkgs.terraform
           pkgs.tmux
           pkgs.vscode
           pkgs.xz
@@ -43,8 +41,9 @@
       homebrew = {
         enable = true;
         brews = [
-          "fswatch",
-          "qmk/qmk/qmk",
+          "fswatch"
+          "qmk/qmk/qmk"
+          "stripe/stripe-cli/stripe"
         ];
         casks = [
           "ghostty"
@@ -127,6 +126,8 @@
 # Used for backwards compatibility, please read the changelog before changing.
 # $ darwin-rebuild changelog
       system.stateVersion = 5;
+
+      system.primaryUser = "joerter";
 
 # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
