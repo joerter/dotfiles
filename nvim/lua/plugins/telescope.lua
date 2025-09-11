@@ -22,7 +22,7 @@ return {
         },
         pickers = {
           buffers = {
-            path_display = { "tail" }, -- Show only filename, not full path
+            path_display = { "smart" }, -- Show only filename, not full path
             previewer = false,         -- Disable preview
             layout_config = {
               height = 0.4,            -- Make the picker smaller

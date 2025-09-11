@@ -44,6 +44,7 @@
           "fswatch"
           "qmk/qmk/qmk"
           "stripe/stripe-cli/stripe"
+          "cloudflared"
         ];
         casks = [
           "ghostty"
