@@ -66,9 +66,9 @@ return {
       lspconfig.terraformls.setup({
         capabilities = capabilities,
       })
-      lspconfig.intelephense.setup({
-        capabilities = capabilities,
-      })
+      -- lspconfig.intelephense.setup({
+      --   capabilities = capabilities,
+      -- })
       lspconfig.phpactor.setup({
         capabilities = capabilities,
         init_options = {
@@ -86,6 +86,14 @@ return {
             end,
           })
         end,
+        settings = {
+          phpactor = {
+            diagnostics = {
+              missing_return_type = false,
+              docblock_missing_return_type = false,
+            }
+          }
+        }
       })
       lspconfig.dockerls.setup({ capabilities = capabilities })
       lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
