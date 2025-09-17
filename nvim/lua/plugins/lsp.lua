@@ -91,6 +91,7 @@ return {
             diagnostics = {
               missing_return_type = false,
               docblock_missing_return_type = false,
+              docblock_missing_param = false
             }
           }
         }
