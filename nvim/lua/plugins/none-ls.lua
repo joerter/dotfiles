@@ -11,6 +11,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
         null_ls.builtins.diagnostics.terraform_validate,
+        null_ls.builtins.formatting.blade_formatter,
         require("none-ls.formatting.jq"),
 				--require("none-ls.diagnostics.eslint"),
         require("none-ls-php.diagnostics.php"),
