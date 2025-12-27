@@ -102,3 +102,20 @@ export PATH="/Users/joerter/Library/Application Support/Herd/bin/":$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/joerter/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="/Users/joerter/Library/Application Support/Herd/config/php/85/"
+
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/joerter/Library/Application Support/Herd/config/php/83/"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/joerter/.lmstudio/bin"
+# End of LM Studio CLI section
+
