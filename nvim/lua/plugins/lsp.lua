@@ -66,36 +66,36 @@ return {
       lspconfig.terraformls.setup({
         capabilities = capabilities,
       })
-      -- lspconfig.intelephense.setup({
-      --   capabilities = capabilities,
-      -- })
-      lspconfig.phpactor.setup({
+      lspconfig.intelephense.setup({
         capabilities = capabilities,
-        init_options = {
-          ["language_server_phpstan.enabled"] = false,
-          ["language_server_psalm.enabled"] = false,
-        },
-        handlers = {
-          ["textDocument/publishDiagnostics"] = function() end,
-        },
-        on_attach = function(client, bufnr)
-          vim.api.nvim_create_autocmd("FileType", {
-            pattern = "php",
-            callback = function()
-              vim.opt_local.iskeyword:append("$")
-            end,
-          })
-        end,
-        settings = {
-          phpactor = {
-            diagnostics = {
-              missing_return_type = false,
-              docblock_missing_return_type = false,
-              docblock_missing_param = false
-            }
-          }
-        }
       })
+      -- lspconfig.phpactor.setup({
+      --   capabilities = capabilities,
+      --   init_options = {
+      --     ["language_server_phpstan.enabled"] = false,
+      --     ["language_server_psalm.enabled"] = false,
+      --   },
+      --   handlers = {
+      --     ["textDocument/publishDiagnostics"] = function() end,
+      --   },
+      --   on_attach = function(client, bufnr)
+      --     vim.api.nvim_create_autocmd("FileType", {
+      --       pattern = "php",
+      --       callback = function()
+      --         vim.opt_local.iskeyword:append("$")
+      --       end,
+      --     })
+      --   end,
+      --   settings = {
+      --     phpactor = {
+      --       diagnostics = {
+      --         missing_return_type = false,
+      --         docblock_missing_return_type = false,
+      --         docblock_missing_param = false
+      --       }
+      --     }
+      --   }
+      -- })
       lspconfig.dockerls.setup({ capabilities = capabilities })
       lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
 
