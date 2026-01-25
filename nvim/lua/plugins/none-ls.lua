@@ -15,6 +15,9 @@ return {
         require("none-ls.formatting.jq"),
 				--require("none-ls.diagnostics.eslint"),
         require("none-ls-php.diagnostics.php"),
+        --require("none-ls-php.diagnostics.phpstan"),
+        --require("none-ls-php.formatting.pint"),
+        --require("none-ls-php.formatting.php-cs-fixer"),
 			},
 		})
 

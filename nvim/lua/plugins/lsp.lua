@@ -2,13 +2,19 @@ return {
   {
     "williamboman/mason.nvim",
     config = function()
-      require("mason").setup()
+      require("mason").setup({
+        ensure_installed = {
+          "pint",
+          "php-cs-fixer",
+          "phpstan",
+        },
+      })
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "clojure_lsp", "ts_ls", "tailwindcss", "lua_ls" },
+      ensure_installed = { "clojure_lsp", "ts_ls", "tailwindcss", "lua_ls", "intelephense" },
     },
   },
   {
