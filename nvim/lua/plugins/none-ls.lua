@@ -1,26 +1,28 @@
 return {
-	"nvimtools/none-ls.nvim",
-	dependencies = {
-		"nvimtools/none-ls-extras.nvim",
+  "nvimtools/none-ls.nvim",
+  dependencies = {
+    "nvimtools/none-ls-extras.nvim",
     "gbprod/none-ls-php.nvim",
-	},
-	config = function()
-		local null_ls = require("null-ls")
-		null_ls.setup({
-			sources = {
-				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettier,
+  },
+  config = function()
+    local null_ls = require("null-ls")
+    null_ls.setup({
+      sources = {
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.prettier.with({
+          prefer_local = "node_modules/.bin",
+        }),
         null_ls.builtins.diagnostics.terraform_validate,
         null_ls.builtins.formatting.blade_formatter,
         require("none-ls.formatting.jq"),
-				--require("none-ls.diagnostics.eslint"),
+        --require("none-ls.diagnostics.eslint"),
         require("none-ls-php.diagnostics.php"),
         --require("none-ls-php.diagnostics.phpstan"),
         --require("none-ls-php.formatting.pint"),
         --require("none-ls-php.formatting.php-cs-fixer"),
-			},
-		})
+      },
+    })
 
-		vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format, {})
-	end,
+    vim.keymap.set("n", "<leader>fr", vim.lsp.buf.format, {})
+  end,
 }
