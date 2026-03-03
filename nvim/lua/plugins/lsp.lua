@@ -24,7 +24,6 @@ return {
     -- },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
 
       local function ts_organize_imports()
         local params = {
@@ -34,45 +33,48 @@ return {
         }
         vim.lsp.buf.execute_command(params)
       end
-      lspconfig.ts_ls.setup({
+
+      local no_virtual_text_diagnostics = function(err, result, ctx, config)
+        local merged_config = vim.tbl_deep_extend("force", config or {}, { virtual_text = false })
+        vim.lsp.handlers["textDocument/publishDiagnostics"](err, result, ctx, merged_config)
+      end
+
+      vim.lsp.config("ts_ls", {
         capabilities = capabilities,
         handlers = {
-          ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-            -- Disable virtual_text
-            virtual_text = false,
-          }),
+          ["textDocument/publishDiagnostics"] = no_virtual_text_diagnostics,
         },
-        on_attach = function(client, bufnr)
-          vim.api.nvim_create_user_command(
+        on_attach = function(_, bufnr)
+          pcall(vim.api.nvim_create_user_command,
             "TsserverOrganizeImports",
             ts_organize_imports,
             { desc = "Organize Imports" }
           )
-          vim.keymap.set("n", "<leader>fi", ts_organize_imports, {})
+          vim.keymap.set("n", "<leader>fi", ts_organize_imports, { buffer = bufnr })
         end,
       })
 
-      lspconfig.clojure_lsp.setup({
+      vim.lsp.config("clojure_lsp", {
         capabilities = capabilities,
-        on_attach = function(client, bufnr)
-          vim.keymap.set("n", "<leader>fr", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true })
+        on_attach = function(_, bufnr)
+          vim.keymap.set("n", "<leader>fr", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, buffer = bufnr })
         end,
       })
 
-      lspconfig.tailwindcss.setup({
+      vim.lsp.config("tailwindcss", {
         capabilities = capabilities,
       })
 
-      lspconfig.lua_ls.setup({
+      vim.lsp.config("lua_ls", {
         capabilities = capabilities,
       })
-      lspconfig.fennel_ls.setup({
+      vim.lsp.config("fennel_ls", {
         capabilities = capabilities,
       })
-      lspconfig.terraformls.setup({
+      vim.lsp.config("terraformls", {
         capabilities = capabilities,
       })
-      lspconfig.intelephense.setup({
+      vim.lsp.config("intelephense", {
         capabilities = capabilities,
       })
       -- lspconfig.phpactor.setup({
@@ -102,8 +104,20 @@ return {
       --     }
       --   }
       -- })
-      lspconfig.dockerls.setup({ capabilities = capabilities })
-      lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
+      vim.lsp.config("dockerls", { capabilities = capabilities })
+      vim.lsp.config("docker_compose_language_service", { capabilities = capabilities })
+
+      vim.lsp.enable({
+        "ts_ls",
+        "clojure_lsp",
+        "tailwindcss",
+        "lua_ls",
+        "fennel_ls",
+        "terraformls",
+        "intelephense",
+        "dockerls",
+        "docker_compose_language_service",
+      })
 
       vim.api.nvim_create_autocmd({ "BufWritePre" }, {
         pattern = { "*.tf", "*.tfvars" },
@@ -111,9 +125,6 @@ return {
           vim.lsp.buf.format()
         end,
       })
-      local map = vim.api.nvim_set_keymap
-      options = { noremap = true }
-
       vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
       vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
