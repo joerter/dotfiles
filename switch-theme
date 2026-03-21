@@ -1,0 +1,120 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
+THEMES_DIR="$DOTFILES_DIR/themes"
+
+# --- Helpers ---
+
+usage() {
+  echo "Usage: switch-theme <theme>"
+  echo ""
+  echo "Available themes:"
+  for f in "$THEMES_DIR"/*.sh; do
+    basename "$f" .sh
+  done
+  exit 1
+}
+
+# --- Validate ---
+
+if [[ $# -ne 1 ]]; then
+  usage
+fi
+
+THEME="$1"
+THEME_FILE="$THEMES_DIR/$THEME.sh"
+
+if [[ ! -f "$THEME_FILE" ]]; then
+  echo "Error: Unknown theme '$THEME'"
+  echo ""
+  usage
+fi
+
+# --- Source theme ---
+
+source "$THEME_FILE"
+
+# --- Update nvim colorscheme ---
+
+NVIM_FILE="$DOTFILES_DIR/nvim/lua/plugins/colorscheme.lua"
+
+if [[ -n "$NVIM_CONFIG" ]]; then
+  cat > "$NVIM_FILE" << NVIMEOF
+return {
+  "$NVIM_PLUGIN",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    $NVIM_CONFIG
+    vim.cmd [[colorscheme $NVIM_COLORSCHEME]]
+  end
+}
+NVIMEOF
+else
+  cat > "$NVIM_FILE" << NVIMEOF
+return {
+  "$NVIM_PLUGIN",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd [[colorscheme $NVIM_COLORSCHEME]]
+  end
+}
+NVIMEOF
+fi
+
+echo "Updated nvim colorscheme -> $NVIM_COLORSCHEME"
+
+# --- Update ghostty ---
+
+GHOSTTY_FILE="$DOTFILES_DIR/ghostty/config"
+
+if grep -q "^theme = " "$GHOSTTY_FILE"; then
+  sed -i '' "s/^theme = .*/theme = $GHOSTTY_THEME/" "$GHOSTTY_FILE"
+else
+  echo "theme = $GHOSTTY_THEME" >> "$GHOSTTY_FILE"
+fi
+
+echo "Updated ghostty theme -> $GHOSTTY_THEME"
+
+# --- Update tmux ---
+
+TMUX_FILE="$DOTFILES_DIR/.tmux.conf"
+
+if grep -q "^# THEME_START" "$TMUX_FILE"; then
+  # Replace content between markers
+  sed -i '' '/^# THEME_START$/,/^# THEME_END$/{/^# THEME_START$/!{/^# THEME_END$/!d;};}' "$TMUX_FILE"
+  if [[ -n "$TMUX_THEME_PLUGIN" ]]; then
+    sed -i '' "/^# THEME_START$/a\\
+$TMUX_THEME_PLUGIN
+" "$TMUX_FILE"
+  fi
+else
+  echo "Warning: No # THEME_START / # THEME_END markers found in .tmux.conf"
+  echo "  Add these markers to enable automatic tmux theme switching."
+fi
+
+echo "Updated tmux theme"
+
+# --- Update zsh ---
+
+ZSH_FILE="$DOTFILES_DIR/.zshrc"
+
+if grep -q '^ZSH_THEME=' "$ZSH_FILE"; then
+  sed -i '' "s/^ZSH_THEME=.*/ZSH_THEME=\"$ZSH_THEME_NAME\"/" "$ZSH_FILE"
+else
+  echo "Warning: No ZSH_THEME= line found in .zshrc"
+fi
+
+echo "Updated zsh theme -> $ZSH_THEME_NAME"
+
+# --- Reload running apps ---
+
+if command -v tmux &>/dev/null && tmux list-sessions &>/dev/null; then
+  tmux source-file ~/.tmux.conf 2>/dev/null && echo "Reloaded tmux config" || echo "Note: Could not reload tmux"
+fi
+
+echo ""
+echo "Theme switched to: $THEME"
+echo "Note: Restart nvim and open a new terminal/source .zshrc for full effect."
