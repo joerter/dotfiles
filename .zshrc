@@ -79,9 +79,18 @@ plugins=(
   nvm
   themes
   zsh-autosuggestions
+  vi-mode
+  spaceship-vi-mode
 )
 
+export RPS1="%{$reset_color%}" # disable default <<< NORMAL mode indicator in right prompt.
 source $ZSH/oh-my-zsh.sh
+
+source "$ZSH_CUSTOM/plugins/spaceship-vi-mode/spaceship-vi-mode.plugin.zsh"
+# to include after line break
+spaceship add --after line_sep vi_mode
+spaceship_vi_mode_enable
+
 
 # export NVM_DIR=~/.nvm
 
