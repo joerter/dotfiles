@@ -13,4 +13,3 @@ NVIM_CONFIG='require("tokyonight").setup({
     })'
 GHOSTTY_THEME="TokyoNight Moon"
 TMUX_THEME_PLUGIN=""
-ZSH_THEME_NAME="tokyo-night"
