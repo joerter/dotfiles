@@ -66,6 +66,16 @@ fi
 
 echo "Updated nvim colorscheme -> $NVIM_COLORSCHEME"
 
+# --- Update nvim lualine theme ---
+
+LUALINE_FILE="$DOTFILES_DIR/nvim/lua/plugins/lualine.lua"
+
+if grep -q "theme = " "$LUALINE_FILE"; then
+  sed -i '' "s/theme = '.*'/theme = '$NVIM_LUALINE_THEME'/" "$LUALINE_FILE"
+fi
+
+echo "Updated nvim lualine theme -> $NVIM_LUALINE_THEME"
+
 # --- Update ghostty ---
 
 GHOSTTY_FILE="$DOTFILES_DIR/ghostty/config"

@@ -11,5 +11,6 @@ NVIM_CONFIG='require("tokyonight").setup({
         highlights.MsgArea = { bg = colors.bg_dark, fg = colors.green, bold = true } -- Command line area
       end
     })'
+NVIM_LUALINE_THEME="tokyonight"
 GHOSTTY_THEME="TokyoNight Moon"
 TMUX_THEME_PLUGIN=""
