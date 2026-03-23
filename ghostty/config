@@ -2,3 +2,12 @@ font-family = "0xProto Nerd Font Mono"
 font-size = 11
 theme = TokyoNight Moon
 keybind = shift+enter=text:\n
+
+# Force stronger font rendering
+# font-thickening = true
+
+# Adjust freetype/coretext hints
+font-feature = -calt  # disable contextual alternates if they blur glyphs
+
+# Make sure you're not accidentally scaling
+window-decoration = true
