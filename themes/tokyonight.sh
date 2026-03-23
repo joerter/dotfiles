@@ -1,9 +1,7 @@
-return {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require("tokyonight").setup({
+# Theme: TokyoNight Moon
+NVIM_PLUGIN="folke/tokyonight.nvim"
+NVIM_COLORSCHEME="tokyonight-moon"
+NVIM_CONFIG='require("tokyonight").setup({
       style = "moon",
       on_highlights = function(highlights, colors)
         highlights.LineNr = { fg = colors.magenta }
@@ -12,7 +10,7 @@ return {
 
         highlights.MsgArea = { bg = colors.bg_dark, fg = colors.green, bold = true } -- Command line area
       end
-    })
-    vim.cmd [[colorscheme tokyonight-moon]]
-  end
-}
+    })'
+NVIM_LUALINE_THEME="tokyonight"
+GHOSTTY_THEME="TokyoNight Moon"
+TMUX_THEME_PLUGIN=""

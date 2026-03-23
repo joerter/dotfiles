@@ -7,7 +7,7 @@ export ZSH_DISABLE_COMPFIX="true"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="tokyo-night"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -79,9 +79,18 @@ plugins=(
   nvm
   themes
   zsh-autosuggestions
+  vi-mode
+  spaceship-vi-mode
 )
 
+export RPS1="%{$reset_color%}" # disable default <<< NORMAL mode indicator in right prompt.
 source $ZSH/oh-my-zsh.sh
+
+source "$ZSH_CUSTOM/plugins/spaceship-vi-mode/spaceship-vi-mode.plugin.zsh"
+# to include after line break
+spaceship add --after line_sep vi_mode
+spaceship_vi_mode_enable
+
 
 # export NVM_DIR=~/.nvm
 
