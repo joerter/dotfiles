@@ -10,3 +10,4 @@ packer_compiled.lua
 .clojure/
 .lsp/
 .nrepl-port
+.nvimlog

@@ -218,3 +218,7 @@ on-mode-changed = []
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
 
+[workspace-to-monitor-force-assignment]
+    F = 'main'                            # Monitor sequence number from left to right. 1-based indexing
+    D = 'main'                       # Main monitor
+    S = 'secondary'                  # Non-main monitor in case when there are only two monitors
