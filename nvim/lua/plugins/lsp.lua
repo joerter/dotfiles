@@ -77,6 +77,12 @@ return {
       vim.lsp.config("intelephense", {
         capabilities = capabilities,
       })
+      vim.lsp.config("laravel_lsp", {
+        cmd = { "laravel-lsp" },
+        filetypes = { "php", "blade" },
+        root_markers = { "artisan", "composer.json", ".git" },
+      })
+
       -- lspconfig.phpactor.setup({
       --   capabilities = capabilities,
       --   init_options = {
@@ -112,6 +118,7 @@ return {
         "clojure_lsp",
         "tailwindcss",
         "lua_ls",
+        "laravel_lsp",
         "fennel_ls",
         "terraformls",
         "intelephense",
